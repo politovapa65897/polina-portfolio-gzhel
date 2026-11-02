@@ -22,7 +22,7 @@ var UI = {
     open: 'Open book: ', close: 'Close book', closeShort: 'Close',
     ctMeta: 'Contact', ctTitle: 'Let’s talk', ctScript: 'hello',
     ctNote: 'Write to me — I usually answer within a couple of days.',
-    email: 'Email', resume: 'Resume PDF', resumeAria: 'Resume PDF — coming soon (TBD)',
+    email: 'Email',
     loc: 'Seoul, South Korea', toTop: 'Back to top', photoAlt: 'Polina Politova in a blue lace frame',
     task: 'Task', did: 'What I did', res: 'Results', gal: 'Gallery', fig: 'Fig.', videoLbl: 'Campaign video',
     city: 'Seoul', navExp: 'Experience',
@@ -42,7 +42,7 @@ var UI = {
     open: 'Открыть книгу: ', close: 'Закрыть книгу', closeShort: 'Закрыть',
     ctMeta: 'Контакты', ctTitle: 'Давайте поговорим', ctScript: 'привет',
     ctNote: 'Пишите — обычно я отвечаю в течение пары дней.',
-    email: 'Почта', resume: 'Резюме PDF', resumeAria: 'Резюме PDF — скоро (TBD)',
+    email: 'Почта',
     loc: 'Сеул, Южная Корея', toTop: 'Наверх', photoAlt: 'Полина Политова в синей кружевной рамке',
     task: 'Задача', did: 'Что я сделала', res: 'Результаты', gal: 'Галерея', fig: 'Рис.', videoLbl: 'Видео кампании',
     city: 'Сеул', navExp: 'Опыт',
@@ -157,8 +157,7 @@ var BOOKS = [
     stats: [
       { n: '3', l: { en: 'issues since January 2025', ru: 'выпуска с января 2025' } },
       { n: '12', l: { en: 'A4 pages', ru: 'страниц A4' } },
-      { n: '8', l: { en: 'rubrics in the issue', ru: 'рубрик в выпуске' } },
-      { n: 'TBD', l: { en: 'readers & reach', ru: 'читатели и охват' } }
+      { n: '8', l: { en: 'rubrics in the issue', ru: 'рубрик в выпуске' } }
     ],
     note: { en: 'Issue 01 — January 2025 · issue 02 — April 2025 · issue 03 — 2025.', ru: 'Выпуск 01 — январь 2025 · выпуск 02 — апрель 2025 · выпуск 03 — 2025.' },
     images: [
@@ -232,10 +231,7 @@ var BOOKS = [
       { src: './assets/images/works-trash-fashion-presentation.webp', cap: { en: 'Trash Fashion — my presentation for the UWC “Met Gala”', ru: 'Trash Fashion — моя презентация для «Met Gala» в UWC' } },
       { src: './assets/images/works-trash-fashion-sketches.webp', cap: { en: 'Trash Fashion — sketches', ru: 'Trash Fashion — эскизы' } },
       { src: './assets/images/works-trash-fashion-nature.webp', cap: { en: 'Trash Fashion — inspiration: nature', ru: 'Trash Fashion — вдохновение: природа' } },
-      { src: './assets/images/works-inspired-bhsad.webp', cap: { en: '“Inspired” — work from the Art and Design course, British Higher School of Art and Design', ru: '«Inspired» — работа с курса «Искусство и дизайн», Британская высшая школа дизайна' } },
-      { src: '', cap: { en: 'AIRI booklets & press wall', ru: 'Буклеты и пресс-волл AIRI' } },
-      { src: '', cap: { en: 'Telegram stickers', ru: 'Стикеры для Telegram' } },
-      { src: '', cap: { en: 'VK posts', ru: 'Посты для VK' } }
+      { src: './assets/images/works-inspired-bhsad.webp', cap: { en: '“Inspired” — work from the Art and Design course, British Higher School of Art and Design', ru: '«Inspired» — работа с курса «Искусство и дизайн», Британская высшая школа дизайна' } }
     ],
     quotes: [Q_AIRI, Q_UWC]
   },
@@ -280,8 +276,7 @@ var BOOKS = [
       { src: './assets/images/diploma-art-design-11946.webp', cap: { en: 'Art and Design — certificate #11946', ru: 'Искусство и дизайн — сертификат №11946' } },
       { src: './assets/images/diploma-uwc-2024.webp', cap: { en: 'UWC Short Course 2024', ru: 'Курс UWC 2024' } },
       { src: './assets/images/diploma-ucd-english.webp', cap: { en: 'English course, UCD Dublin', ru: 'Курс английского, UCD Dublin' } },
-      { src: './assets/images/diploma-sejong-cultural.webp', cap: { en: 'Cultural Experience Program, Sejong', ru: 'Программа культурного опыта, Сэджон' } },
-      { src: '', cap: { en: 'Coddy diplomas', ru: 'Дипломы Coddy' } }
+      { src: './assets/images/diploma-sejong-cultural.webp', cap: { en: 'Cultural Experience Program, Sejong', ru: 'Программа культурного опыта, Сэджон' } }
     ],
     quotes: [Q_BECK]
   },

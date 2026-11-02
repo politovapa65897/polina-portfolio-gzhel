@@ -41,8 +41,6 @@
     setText('ct-script', t.ctScript);
     setText('ct-note', t.ctNote);
     setText('sc-email', t.email + ' ↗');
-    setText('sc-resume-label', t.resume + ' — TBD');
-    setAttr('sc-resume', 'aria-label', t.resumeAria);
     setText('ft-loc', t.loc);
     setText('ft-top', t.toTop + ' ↑');
     renderIdxList(t, L);

@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Polina Politova — Portfolio</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Oswald:wght@500&amp;family=Lora:wght@400;500&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600&amp;family=Marck+Script&amp;family=Oranienbaum&amp;family=Unbounded:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F2ECE3}
+a{color:#1F3D8C}a:hover{color:#1F3D8C}
+.pp{--por:#F2ECE3;--cob:#1F3D8C;--ink:#1A2C66;--gold:#C2A15A;--hair:rgba(31,61,140,.32);font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.65;color:var(--ink);background:#F2ECE3;min-height:100vh;position:relative;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.pp *{box-sizing:border-box}
+.o{font-family:'Oranienbaum',Georgia,serif;font-weight:400}
+.s{font-family:'Great Vibes','Marck Script',cursive;font-weight:400}
+.u{font-family:'Unbounded',sans-serif;font-weight:400;font-size:10.5px;line-height:1.5;letter-spacing:.18em;text-transform:uppercase;color:var(--cob)}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 28px;max-width:1440px;margin:0 auto;padding:10px clamp(16px,4vw,56px);border-bottom:1px solid var(--hair)}
+.bar a,.bar button{font-family:'Unbounded',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cob);text-decoration:none;background:none;border:0;border-bottom:1px solid transparent;padding:14px 0;cursor:pointer;transition:border-color .6s ease-out}
+.bar a:hover,.bar button:hover{border-bottom-color:var(--cob)}
+.nav{display:flex;align-items:center;flex-wrap:wrap;gap:0 26px}
+.lang{display:flex;align-items:center;gap:8px}
+.lang button{min-width:30px}
+.lang button[aria-pressed="true"]{border-bottom-color:var(--cob);font-weight:500}
+.bar a:focus-visible,.bar button:focus-visible,.idx:focus-visible,.close:focus-visible,.sc:focus-visible,.next:focus-visible{outline:1px solid var(--cob);outline-offset:4px}
+.tbdf{display:grid;place-items:center;border:1px solid var(--hair);text-align:center;padding:8px;background:transparent}
+
+.hero{position:relative;max-width:1440px;margin:0 auto;padding:28px clamp(16px,4vw,56px) 130px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;align-items:start;min-height:860px}
+.h-meta{grid-column:1/7;grid-row:1;margin:0;position:relative;z-index:4;display:flex;gap:22px}
+.nw{grid-column:1/11;grid-row:2;position:relative;z-index:4;margin-top:clamp(40px,7vw,96px)}
+.h-name{margin:0;font-size:clamp(70px,12.4vw,182px);line-height:.84;color:var(--cob);letter-spacing:-.01em}
+.h-name .l1,.h-name .l2{display:block}
+.h-name .l2{padding-left:9vw}
+.h-script{position:absolute;left:clamp(150px,38%,560px);top:30%;font-size:clamp(46px,6.4vw,96px);line-height:1;color:var(--ink);transform:rotate(-8deg);white-space:nowrap}
+.h-intro{grid-column:2/6;grid-row:3;position:relative;z-index:4;margin-top:56px;max-width:340px}
+.h-intro p{margin:0 0 14px}
+.h-facts{grid-column:7/13;grid-row:3;position:relative;z-index:4;list-style:none;margin:300px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;border-top:1px solid var(--hair)}
+.h-facts li{padding-top:12px}
+.fact-n{display:block;font-family:'Oranienbaum',serif;font-size:46px;line-height:1;color:var(--cob);margin-bottom:6px}
+.next{position:absolute;left:clamp(16px,4vw,56px);bottom:96px;z-index:4;text-decoration:none}
+.h-plate{position:absolute;z-index:2;right:-4vw;top:40px;width:min(46vw,660px);height:auto;mix-blend-mode:multiply;transform:translate3d(0,calc(var(--sy,0) * 0.05px),0);animation:sIn 1.4s cubic-bezier(.22,.61,.36,1) both}
+.tile{position:absolute;aspect-ratio:1/1}
+.t1{z-index:1;left:clamp(16px,4vw,56px);top:600px;width:150px;transform:translate3d(0,calc(var(--sy,0) * -0.09px),0)}
+.t2{z-index:3;right:40vw;top:30px;width:118px;transform:translate3d(0,calc(var(--sy,0) * -0.14px),0)}
+.t3{z-index:3;right:4vw;top:460px;width:180px;transform:translate3d(0,calc(var(--sy,0) * -0.07px),0)}
+.h-lace{position:absolute;z-index:1;left:30%;right:clamp(16px,4vw,56px);bottom:22px;height:54px}
+.h-anim{animation:fUp 1s cubic-bezier(.22,.61,.36,1) both}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}
+@keyframes fUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes sIn{from{opacity:0;transform:rotate(-14deg) scale(.96)}to{opacity:1;transform:translate3d(0,calc(var(--sy,0) * 0.05px),0)}}
+
+.bar{padding:22px clamp(16px,6vw,96px) 14px;border-bottom:1px solid var(--cob)}
+.bar .hz-kick{font-family:'Bebas Neue','Oswald',sans-serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;padding:12px 0}
+.bar .sn{font-family:'Great Vibes','Marck Script',cursive;font-size:27px;letter-spacing:0;text-transform:none;padding:6px 0;line-height:1.2}
+.hz{max-width:1440px;margin:0 auto;padding:40px clamp(16px,6vw,96px) 70px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;align-items:center;border-bottom:1px solid var(--cob)}
+.hz-l{grid-column:1/8;min-width:0}
+.hz-r{grid-column:8/13;min-width:0;display:flex;justify-content:center}
+.hz-nw{position:relative;margin-left:-2vw}
+.hz-name{margin:0;font-family:'Bebas Neue','Oswald',sans-serif;font-weight:400;font-size:clamp(96px,14vw,206px);line-height:.84;letter-spacing:.005em;color:#1E3A7B;text-transform:uppercase}
+.hz-name span{display:block}
+.hz-name .l2{padding-left:clamp(40px,7vw,110px)}
+.hz-script{position:absolute;left:clamp(200px,40%,420px);top:30%;font-size:clamp(46px,5.4vw,80px);line-height:1;color:#1E3A7B}
+.hz-intro{font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.6;color:#1E3A7B;text-align:center;max-width:400px;margin:70px 0 0 clamp(20px,7vw,110px)}
+.hz-photo{display:block;width:min(100%,440px);height:auto;mix-blend-mode:multiply}
+.xp{max-width:1440px;margin:0 auto;padding:90px clamp(16px,4vw,56px) 110px;border-top:1px solid var(--hair);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;row-gap:40px}
+.xp-l{grid-column:1/5;min-width:0}
+.xp-r{grid-column:5/13;min-width:0}
+.xp-list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--hair)}
+.xp-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,.8fr);gap:20px;align-items:baseline;border-top:1px solid var(--hair);padding:16px 0}
+.xp-role{font-family:'Oranienbaum',serif;font-size:26px;line-height:1.15;color:var(--cob)}
+.xp-org{font-size:14.5px;line-height:1.5}
+.xp-date{text-align:right}
+.xp-q{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin-top:44px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1)}
+.rv.in{opacity:1;transform:none}
+.lib{max-width:1440px;margin:0 auto;padding:90px clamp(16px,4vw,56px) 110px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;row-gap:40px;border-top:1px solid var(--hair)}
+.lib-l{grid-column:1/4;min-width:0}
+.lib-r{grid-column:4/13;min-width:0}
+.sec-h{margin:22px 0 0;font-size:clamp(60px,7vw,116px);line-height:.88;color:var(--cob)}
+.sec-s{display:block;font-size:clamp(38px,4vw,58px);line-height:1;color:var(--ink);transform:rotate(-6deg);margin:4px 0 30px 30%}
+.idx-list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--hair)}
+.idx{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:baseline;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--hair);padding:12px 0 13px;cursor:pointer;color:var(--ink);font-family:inherit}
+.idx-t{display:inline;font-family:'Oranienbaum',serif;font-size:27px;line-height:1.1;border-bottom:1px solid transparent;transition:border-color .6s ease-out}
+.idx:hover .idx-t{border-bottom-color:var(--cob)}
+.idx-k{display:block;margin-top:4px}
+.hint-m{display:none}
+.shelf-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding:24px 0 6px;scrollbar-width:thin;scrollbar-color:var(--hair) transparent}
+.scene{display:flex;align-items:flex-end;justify-content:center;gap:24px;width:max-content;margin:0 auto}
+.shelf{position:relative;flex:none;width:620px;border:1px solid var(--hair);padding:0;margin:0}
+.shelf-img{display:block;width:100%;height:auto}
+.lamp{flex:none;display:block;width:380px;height:auto;mix-blend-mode:multiply}
+.book{position:absolute;padding:0;margin:0;cursor:pointer;background:#F2ECE3;border:1px solid var(--cob);border-radius:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:6px 0;color:var(--cob);font-family:inherit;transform-origin:50% 100%;transition:transform .6s cubic-bezier(.22,.61,.36,1);scroll-snap-align:center}
+.book:hover{transform:translateY(-6px)}
+.book:focus-visible{outline:1px solid var(--cob);outline-offset:3px}
+.book .gl{display:block;width:100%;border-top:1px solid var(--gold);flex:none}
+.sp-t{writing-mode:vertical-rl;font-family:'Oranienbaum',serif;font-size:14px;line-height:1;white-space:nowrap;color:var(--cob)}
+.pp[lang="ru"] .sp-t{font-size:13px}
+.b-isa{left:35.65%;top:37.75%;width:5.44%;height:12.34%}
+.b-lumina{left:41.36%;top:38.64%;width:4.63%;height:11.45%}
+.b-bookaholic{left:46.26%;top:37.39%;width:5.71%;height:12.70%}
+.b-works{left:25.85%;top:67.8%;width:5.44%;height:9.84%}
+.b-diplomas{left:31.56%;top:68.34%;width:4.9%;height:9.3%}
+.b-about{left:36.73%;top:67.44%;width:5.71%;height:10.2%}
+.book.is-tilt{animation:bkTilt .7s cubic-bezier(.45,0,.55,1) forwards}
+.book.is-out{opacity:0;pointer-events:none}
+.book.is-return{animation:bkBack .8s cubic-bezier(.22,.61,.36,1) both}
+@keyframes bkTilt{0%{transform:perspective(400px) translateY(0) rotateX(0)}35%{transform:perspective(400px) translateY(-12px) rotateX(-7deg)}100%{transform:perspective(400px) translateY(30px) rotateX(-64deg) scale(1.08);opacity:0}}
+@keyframes bkBack{from{transform:translateY(-36px);opacity:0}to{transform:none;opacity:1}}
+
+.ct{position:relative;padding:110px clamp(16px,4vw,56px) 34px;border-top:1px solid var(--hair)}
+.lace-tbd{height:54px;max-width:1440px;margin:0 auto 96px}
+.ct-in{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;row-gap:40px}
+.ct-l{grid-column:1/7;min-width:0}
+.ct-r{grid-column:7/13;min-width:0}
+.ct-h{margin:22px 0 0;font-size:clamp(64px,9vw,150px);line-height:.86;color:var(--cob)}
+.mail{display:inline-block;margin-top:36px;font-family:'Oranienbaum',serif;font-size:clamp(26px,3vw,42px);line-height:1.1;color:var(--cob);text-decoration:none;border-bottom:1px solid var(--cob);padding-bottom:4px;word-break:break-word}
+.ct-note{max-width:330px;margin:26px 0 0}
+.scs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 30px;padding-top:20px}
+.sc{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:inherit;color:var(--cob)}
+.sc:nth-child(2){margin-top:90px}.sc:nth-child(3){margin-top:-40px}.sc:nth-child(4){margin-top:50px}
+.sc img{display:block;width:min(210px,100%);height:auto;mix-blend-mode:multiply;transition:transform 1.6s cubic-bezier(.22,.61,.36,1)}
+.sc:hover img,.sc:focus-visible img{transform:rotate(70deg)}
+.sc-l{display:flex;gap:8px;align-items:center;border-top:1px solid var(--hair);padding-top:8px;min-width:150px;justify-content:center}
+.sc.is-tbd{cursor:not-allowed}
+.fbar{max-width:1440px;margin:90px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;border-top:1px solid var(--hair);padding-top:16px}
+.fbar a{text-decoration:none}
+
+.ov{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:2vh 2vw;background:rgba(26,44,102,.55);animation:ovIn .6s ease-out both}
+.ov.is-closing{animation:ovOut .6s ease-out forwards}
+@keyframes ovIn{from{opacity:0}to{opacity:1}}
+@keyframes ovOut{from{opacity:1}to{opacity:0}}
+.spread{position:relative;display:flex;width:min(1300px,96vw);height:min(860px,94vh);background:#F2ECE3;border:1px solid var(--gold);perspective:2400px;animation:spIn .8s cubic-bezier(.22,.61,.36,1) both}
+.ov.is-closing .spread{animation:spOut .6s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes spIn{from{transform:translateY(10vh) scale(.62);opacity:0}to{transform:none;opacity:1}}
+@keyframes spOut{from{transform:none;opacity:1}to{transform:translateY(8vh) scale(.7);opacity:0}}
+.page{position:relative;flex:1 1 50%;min-width:0;overflow:hidden;background:#F2ECE3}
+.page-l{border-right:1px solid var(--hair);transform-origin:100% 50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;animation:pgOpen 1s .15s cubic-bezier(.22,.61,.36,1) both}
+@keyframes pgOpen{from{transform:rotateY(-180deg)}to{transform:rotateY(0)}}
+.frame{position:absolute;inset:14px;border:1px solid var(--hair);pointer-events:none;z-index:2}
+.pg-scroll{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--hair) transparent}
+.pg-in{padding:46px 56px 56px}
+.close{position:absolute;top:22px;right:22px;z-index:6;min-height:44px;padding:0 16px;display:flex;align-items:center;gap:10px;border:1px solid var(--cob);background:#F2ECE3;color:var(--cob);cursor:pointer;font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.pg-top{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--hair);padding-bottom:10px}
+.sp-title{margin:44px 0 0;font-size:clamp(58px,6.4vw,112px);line-height:.88;color:var(--cob);overflow-wrap:anywhere}
+.sp-script{display:block;font-size:clamp(34px,3.4vw,52px);line-height:1;color:var(--ink);transform:rotate(-5deg);margin:6px 0 0 38%}
+.sp-lead{font-size:16.5px;line-height:1.6;margin:34px 0 40px;max-width:36ch}
+.portrait{display:block;margin:0 0 40px;padding:8px;border:1px solid var(--hair);width:min(320px,80%)}
+.portrait img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.lbl{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.lbl::after{content:'';flex:1 1 auto;border-top:1px solid var(--hair)}
+.blk{margin:0 0 36px}
+.blk p{margin:0 0 12px}
+.list{list-style:none;margin:0;padding:0;counter-reset:it}
+.list li{counter-increment:it;display:grid;grid-template-columns:38px minmax(0,1fr);padding:10px 0;border-bottom:1px solid rgba(31,61,140,.14);font-size:15px;line-height:1.6}
+.list li::before{content:counter(it,lower-roman) '.';font-family:'Oranienbaum',serif;font-size:19px;line-height:1.3;color:var(--cob)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;margin:0 0 14px}
+.stat{border-top:1px solid var(--hair);padding:14px 0 18px}
+.stat-n{margin:0 0 8px;font-family:'Oranienbaum',serif;font-size:clamp(46px,4.6vw,70px);line-height:.95;color:var(--cob)}
+.stat-l{margin:0}
+.note{font-size:12.5px;line-height:1.55;margin:0 0 40px}
+.gal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;grid-auto-flow:dense;margin:0 0 40px}
+.fig{margin:0;min-width:0;grid-column:span 2;display:flex;flex-direction:column}
+.fig .mat{display:block;padding:5px;border:1px solid var(--hair);flex:1 1 auto}
+.fig img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.fig figcaption{margin-top:7px}
+.gal .fig:first-child{grid-column:span 4;grid-row:span 2}
+.gal .fig:first-child .mat{display:flex}
+.gal .fig:first-child img{height:100%;aspect-ratio:auto;min-height:100%}
+.gal.wide .fig{grid-column:span 3}
+.gal.wide .fig:first-child{grid-column:span 6;grid-row:auto}
+.gal.wide .fig img,.gal.wide .fig:first-child img{aspect-ratio:16/9;height:auto;min-height:0}
+.tbd{aspect-ratio:4/5}
+.gal .fig:first-child .tbd{height:100%;aspect-ratio:auto;min-height:260px}
+.quote{margin:0 0 20px;padding:18px 0 0;border-top:1px solid var(--hair)}
+.quote p{margin:0 0 10px;font-family:'Oranienbaum',serif;font-size:24px;line-height:1.3;color:var(--ink)}
+.vid{max-width:420px}
+.vid video{display:block;width:100%;aspect-ratio:4/5;background:#1A2C66}
+.mag-lace{height:44px;margin:0 0 30px}
+
+.shelf2{position:relative;flex:none;width:680px;margin:160px 0 0;left:80px}
+@media (max-width:1100px){.shelf2{margin-top:40px;left:0}}
+.shelf2-img{display:block;width:100%;height:auto}
+.bk2{position:absolute;padding:0;margin:0;border:0;background:none;cursor:pointer;transform:rotate(var(--r,0deg));transform-origin:50% 100%;transition:transform .6s cubic-bezier(.22,.61,.36,1);scroll-snap-align:center}
+.bk2 img{display:block;width:100%;height:100%}
+.bk2:hover{transform:translateY(-6px) rotate(var(--r,0deg))}
+.bk2:focus-visible{outline:1px solid #F2ECE3;outline-offset:3px}
+.bk2.is-tilt{animation:bkTilt .7s cubic-bezier(.45,0,.55,1) forwards}
+.bk2.is-out{opacity:0;pointer-events:none}
+.bk2.is-return{animation:bkBack .8s cubic-bezier(.22,.61,.36,1) both}
+.pk{position:absolute;left:54.15%;top:24.33%;width:17.69%;height:11.45%;padding:0;margin:0;border:0;background:none;cursor:pointer;transform-origin:50% 100%;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.pk img{display:block;width:100%;height:100%;object-fit:contain}
+.pk:hover{transform:rotate(-3deg)}
+.pk:focus-visible{outline:1px solid var(--cob);outline-offset:4px}
+.pk.is-gone{visibility:hidden}
+.fx{position:fixed;left:0;top:0;width:100vw;height:100vh;pointer-events:none;z-index:40;transition:opacity .8s ease-out}
+.fx.is-fade{opacity:0}
+@media (max-width:1360px){.lamp{display:none}}
+@media (max-width:1100px){
+.lib-l,.lib-r,.ct-l,.ct-r,.xp-l,.xp-r,.hz-l,.hz-r{grid-column:1/-1}
+.hz-r{margin-top:40px}
+.xp-q{grid-template-columns:minmax(0,1fr)}
+.hero{min-height:0}
+.h-plate{position:relative;grid-column:1/-1;grid-row:4;right:auto;top:auto;width:min(86vw,560px);justify-self:end;margin:-30px -4vw 0 0}
+.h-facts{grid-column:1/-1;grid-row:5;margin-top:40px}
+.h-intro{grid-column:1/-1}
+.t1{top:auto;bottom:250px}.t2{right:8vw}.t3{top:auto;bottom:160px}
+}
+@media (max-width:860px){
+.ov{padding:0}
+.spread{width:100vw;height:100vh;height:100dvh;border:0;flex-direction:column;overflow-y:auto;perspective:none}
+.page{flex:none;overflow:visible}
+.page-l{animation:none;border-right:0}
+.page-r{border-top:1px solid var(--hair)}
+.frame{display:none}
+.pg-scroll{position:static;overflow:visible}
+.pg-in{padding:84px 20px 36px}
+.close{position:fixed;top:12px;right:12px}
+.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fig,.gal .fig:first-child,.gal.wide .fig,.gal.wide .fig:first-child{grid-column:span 2;grid-row:auto}
+.gal .fig:first-child img{height:auto;aspect-ratio:4/5}
+.gal.wide .fig img{aspect-ratio:16/9}
+}
+@media (max-width:760px){
+.hero{padding-bottom:110px}
+.hz-script{left:42%;top:32%}
+.hz-intro{margin-left:0;text-align:left}
+.xp-row{grid-template-columns:minmax(0,1fr)}
+.xp-date{text-align:left}
+.bar .sn{font-size:23px}
+.h-name .l2{padding-left:12vw}
+.h-script{top:34%;left:30%}
+.h-facts{grid-template-columns:minmax(0,1fr)}
+.t1{width:100px}.t2{width:80px;top:70px}.t3{width:110px}
+.h-lace{left:16px}
+.hint-d{display:none}.hint-m{display:block}
+.scs{gap:16px}
+.sc:nth-child(2){margin-top:50px}.sc:nth-child(3){margin-top:-20px}.sc:nth-child(4){margin-top:30px}
+.stats{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+.pp *,.pp *::before,.pp *::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+}
+</style>
+</helmet>
+<div class="pp" lang="{{lang}}">
+<header class="bar" id="top">
+<a class="hz-kick" href="#top">{{t.kicker}} · {{t.city}}</a>
+<nav class="nav" aria-label="{{t.navLabel}}">
+<button type="button" class="sn" onClick="{{openAbout}}">{{t.navAbout}}</button>
+<a class="sn" href="#library">{{t.navWork}}</a>
+<button type="button" class="sn" onClick="{{openExp}}">{{t.navExp}}</button>
+<a class="sn" href="#contact">{{t.navContact}}</a>
+<div class="lang" role="group" aria-label="{{t.langLabel}}">
+<button type="button" aria-pressed="{{enOn}}" onClick="{{setEn}}">En</button>
+<span class="u" aria-hidden="true">/</span>
+<button type="button" aria-pressed="{{ruOn}}" onClick="{{setRu}}">Ru</button>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hz" aria-label="{{t.heroLabel}}">
+<div class="hz-l">
+<div class="hz-nw h-anim d1">
+<h1 class="hz-name"><span class="l1">Polina</span><span class="l2">Politova</span></h1>
+<span class="hz-script s" aria-hidden="true">{{t.script}}</span>
+</div>
+<p class="hz-intro h-anim d2">{{t.intro}}</p>
+</div>
+<div class="hz-r h-anim d3">
+<img class="hz-photo" src="./assets/955e09ddf061b197984d74430ca5d4d1.png" alt="{{t.photoAlt}}">
+</div>
+</section>
+
+<section class="{{libCls}}" id="library" data-rv="lib" aria-labelledby="lib-h">
+<div class="lib-l">
+<p class="u" style="margin: 0">(02) — {{t.libMeta}}</p>
+<h2 class="sec-h o" id="lib-h">{{t.libTitle}}</h2>
+<span class="sec-s s" aria-hidden="true">{{t.libScript}}</span>
+<ol class="idx-list">
+<sc-for list="{{books}}" as="b" hint-placeholder-count="6">
+<li><button type="button" class="idx" onClick="{{b.open}}"><span class="u">{{b.roman}}</span><span><span class="idx-t">{{b.title}}</span><span class="idx-k u">{{b.type}}</span></span></button></li>
+</sc-for>
+</ol>
+<p class="u hint-d" style="margin: 18px 0 0">{{t.hintD}}</p>
+<p class="u hint-m" style="margin: 18px 0 0">{{t.hintM}}</p>
+<p class="u" style="margin: 10px 0 0">{{t.pkHint}}</p>
+</div>
+
+<div class="lib-r">
+<div class="shelf-scroll">
+<div class="scene">
+<nav class="shelf2" aria-label="{{t.shelfLabel}}">
+<img class="shelf2-img" src="./assets/9388735d26a4555075fa8c67433780aa.png" alt="">
+<button type="button" class="{{bk.about.cls}}" style="left: 16.19%; top: 10.23%; width: 2.52%; height: 16.12%" onClick="{{bk.about.open}}" aria-label="{{bk.about.label}}"><img src="./assets/c9a280adc386f80cfc7f3963ad78e7b9.png" alt=""></button>
+<button type="button" class="{{bk.diplomas.cls}}" style="left: 24.16%; top: 10.9%; width: 2.44%; height: 16.43%; --r: -40.4deg; transform-origin: 50% 50%" onClick="{{bk.diplomas.open}}" aria-label="{{bk.diplomas.label}}"><img src="./assets/a6446c08aa0e6e2d469ba1d94d7cf1c8.png" alt=""></button>
+<button type="button" class="{{bk.workexp.cls}}" style="left: 41.35%; top: 27.91%; width: 2.2%; height: 14.26%" onClick="{{bk.workexp.open}}" aria-label="{{bk.workexp.label}}"><img src="./assets/bbda2ab62dcf9dd043465708debad820.png" alt=""></button>
+<button type="button" class="{{bk.works.cls}}" style="left: 46.54%; top: 28.37%; width: 2.2%; height: 13.95%" onClick="{{bk.works.open}}" aria-label="{{bk.works.label}}"><img src="./assets/da7ce9d4c0ba9cd80f98910280504cbc.png" alt=""></button>
+<button type="button" class="{{bk.isa.cls}}" style="left: 16.35%; top: 48.22%; width: 17.92%; height: 2.64%" onClick="{{bk.isa.open}}" aria-label="{{bk.isa.label}}"><img src="./assets/1f60693664886bcdb6dc2c337f1561d0.png" alt=""></button>
+<button type="button" class="{{bk.lumina.cls}}" style="left: 14.78%; top: 50.7%; width: 16.51%; height: 2.33%" onClick="{{bk.lumina.open}}" aria-label="{{bk.lumina.label}}"><img src="./assets/244181a36f6352b9a77caf7a2c9ed5de.png" alt=""></button>
+<button type="button" class="{{bk.bookaholic.cls}}" style="left: 16.35%; top: 52.87%; width: 16.51%; height: 2.33%" onClick="{{bk.bookaholic.open}}" aria-label="{{bk.bookaholic.label}}"><img src="./assets/d030b7dd7b412153e3a00051205bc24d.png" alt=""></button>
+<button type="button" class="{{bk.planty.cls}}" style="left: 13.52%; top: 55.04%; width: 17.92%; height: 2.48%" onClick="{{bk.planty.open}}" aria-label="{{bk.planty.label}}"><img src="./assets/9429841ee306e75cc8cce2c7deba8bea.png" alt=""></button>
+<button type="button" class="{{pkCls}}" style="left: 38.21%; top: 60.78%; width: 10.85%; height: 11.32%" onClick="{{breakPk}}" aria-label="{{t.pkLabel}}"><img src="./assets/b185dddace29beab8ffd6aa058820149.png" alt=""></button>
+</nav>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="ct" id="contact">
+<div class="{{ctCls}}" data-rv="ct">
+<div class="ct-in">
+<div class="ct-l">
+<p class="u" style="margin: 0">(03) — {{t.ctMeta}}</p>
+<h2 class="ct-h o">{{t.ctTitle}}</h2>
+<span class="sec-s s" aria-hidden="true">{{t.ctScript}}</span>
+<a class="mail" href="mailto:politova.pa@gmail.com">politova.pa@gmail.com</a>
+<p class="ct-note">{{t.ctNote}}</p>
+</div>
+<div class="ct-r">
+<div class="scs">
+<a class="sc" href="https://www.linkedin.com/in/polina-politova-3bb657448" target="_blank" rel="noopener noreferrer"><img src="./assets/49caaa3370eb674e52e024a6dd2aed74.jpg" alt=""><span class="sc-l u">LinkedIn ↗</span></a>
+<a class="sc" href="https://www.instagram.com/weoesap/" target="_blank" rel="noopener noreferrer"><img src="./assets/49caaa3370eb674e52e024a6dd2aed74.jpg" alt=""><span class="sc-l u">Instagram ↗</span></a>
+<a class="sc" href="mailto:politova.pa@gmail.com"><img src="./assets/49caaa3370eb674e52e024a6dd2aed74.jpg" alt=""><span class="sc-l u">{{t.email}} ↗</span></a>
+<button type="button" class="sc is-tbd" aria-disabled="true" aria-label="{{t.resumeAria}}"><img src="./assets/49caaa3370eb674e52e024a6dd2aed74.jpg" alt=""><span class="sc-l u">{{t.resume}} — TBD</span></button>
+</div>
+</div>
+</div>
+<div class="fbar"><span class="u">© 2026 Polina Politova</span><span class="u">{{t.loc}}</span><a class="u" href="#top">{{t.toTop}} ↑</a></div>
+</div>
+</footer>
+
+<canvas class="{{fxCls}}" aria-hidden="true"></canvas>
+<img class="pk-atlas" src="./assets/529646bc85ba35878f0dc16f0c0c51a1.png" alt="" aria-hidden="true" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; left: 0; top: 0">
+<sc-if value="{{showOv}}" hint-placeholder-val="{{false}}">
+<div class="{{ovCls}}" onClick="{{close}}" onKeyDown="{{onKey}}" role="dialog" aria-modal="true" aria-label="{{active.title}}">
+<div class="spread" onClick="{{stop}}">
+<button type="button" class="close pp-close" onClick="{{close}}" aria-label="{{t.close}}">{{t.closeShort}} ✕</button>
+<div class="page page-l">
+<div class="frame" aria-hidden="true"></div>
+<div class="pg-scroll">
+<div class="pg-in">
+<div class="pg-top"><span class="u">{{active.kicker}}</span><span class="u">p. {{active.no}}</span></div>
+<h2 class="sp-title o">{{active.title}}</h2>
+<span class="sp-script s" aria-hidden="true">{{active.script}}</span>
+<p class="sp-lead">{{active.lead}}</p>
+<sc-if value="{{active.hasPortrait}}" hint-placeholder-val="{{false}}">
+<figure class="portrait"><img src="./assets/955e09ddf061b197984d74430ca5d4d1.png" alt="{{t.photoAlt}}"></figure>
+</sc-if>
+<section class="blk">
+<h3 class="lbl u">(01) {{active.h1}}</h3>
+<sc-if value="{{active.hasS1p}}" hint-placeholder-val="{{true}}"><p>{{active.s1p}}</p></sc-if>
+<ol class="list"><sc-for list="{{active.s1items}}" as="it" hint-placeholder-count="2"><li>{{it.t}}</li></sc-for></ol>
+</section>
+<section class="blk">
+<h3 class="lbl u">(02) {{active.h2}}</h3>
+<sc-if value="{{active.hasS2p}}" hint-placeholder-val="{{false}}"><p>{{active.s2p}}</p></sc-if>
+<ol class="list"><sc-for list="{{active.s2items}}" as="it" hint-placeholder-count="4"><li>{{it.t}}</li></sc-for></ol>
+</section>
+</div>
+</div>
+</div>
+<div class="page page-r">
+<div class="frame" aria-hidden="true"></div>
+<div class="pg-scroll">
+<div class="pg-in">
+<section class="blk">
+<h3 class="lbl u">(03) {{active.h3}}</h3>
+<div class="stats">
+<sc-for list="{{active.stats}}" as="st" hint-placeholder-count="4">
+<div class="stat"><p class="stat-n">{{st.n}}</p><p class="stat-l u">{{st.l}}</p></div>
+</sc-for>
+</div>
+<sc-if value="{{active.hasNote}}" hint-placeholder-val="{{false}}"><p class="note">{{active.note}}</p></sc-if>
+</section>
+<sc-if value="{{active.hasVideo}}" hint-placeholder-val="{{false}}">
+<section class="blk">
+<h3 class="lbl u">{{t.videoLbl}}</h3>
+<figure class="fig vid"><span class="mat"><video src="{{active.video}}" controls="" muted="" playsinline="" loop="" preload="metadata"></video></span><figcaption class="u">{{active.videoCap}}</figcaption></figure>
+</section>
+</sc-if>
+<sc-if value="{{active.hasImages}}" hint-placeholder-val="{{true}}">
+<section class="blk">
+<h3 class="lbl u">(04) {{active.h4}}</h3>
+<div class="{{active.galCls}}">
+<sc-for list="{{active.images}}" as="im" hint-placeholder-count="3">
+<figure class="fig">
+<sc-if value="{{im.has}}" hint-placeholder-val="{{true}}"><span class="mat"><img src="{{im.src}}" alt="{{im.cap}}" loading="lazy"></span></sc-if>
+<sc-if value="{{im.tbd}}" hint-placeholder-val="{{false}}"><span class="tbd tbdf u">TBD</span></sc-if>
+<figcaption class="u">{{im.fig}} — {{im.cap}}</figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+</sc-if>
+<sc-for list="{{active.quotes}}" as="qt" hint-placeholder-count="1">
+<blockquote class="quote"><p>{{qt.q}}</p><footer class="u">{{qt.by}}</footer></blockquote>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","ru"],"default":"en"},"$preview":{"width":1440,"height":2700}}'>
+var IMG = {
+  before: './assets/692316053646dcab129cd173575238d7.jpg', after: './assets/1677dd21e7d9811a70036585148f6148.jpg',
+  reel: './assets/7f4f4d8e170b08f7f13ef6607ece28f4.jpg', story: './assets/bfd4933b4bd67bd9621a8a47963e58d7.jpg',
+  words: './assets/57f16fe01ce0765a990f1a051d9601b0.jpg', insights: './assets/0646b825dd5e261b17c4bc016312fe41.jpg',
+  lCover: './assets/b35e8820b3ff74e1146e54c5c01ff006.jpg', lResearch: './assets/140940681e6abe9a87b50425227bf302.jpg',
+  lProduct: './assets/7328f17b598ccaea00488cd3d443f3ca.jpg', lSwot: './assets/41c90d30333c39f6fef5cd7fcb6c81fd.jpg', l4p: './assets/759a7127c93c4db4f0d60e3ac081aa78.jpg',
+  b1: './assets/73970c8119e19a15ca3d20a8e24f9683.jpg', b2: './assets/d082f2fbeed1da97a7a00be326bdfb31.jpg', b3: './assets/3f3fb4537ac2c1bb111b659c3b7ee27d.jpg',
+  b6: './assets/e3b155981c3ef8d004b77249ea8cf729.jpg', b8: './assets/3c4a52a0a83b3c07663875ca8c7c9d40.jpg', b9: './assets/a0bee12505f3358d99c32ae25fdd41fa.jpg'
+};
+
+var UI = {
+  en: {
+    portfolio: 'Portfolio', navLabel: 'Main', navWork: 'Work', navAbout: 'About', navContact: 'Contact', langLabel: 'Language',
+    heroLabel: 'Introduction', role: 'Portfolio — 2026', script: 'portfolio',
+    kicker: 'Marketing & Brand Designer',
+    intro: 'I’m Polina — a business student who designs. I build visual systems and campaigns, then check the numbers to see if they worked. Last semester that meant 366K views for a student club.',
+    facts: [{ n: '366K', l: 'views in 90 days — ISA' }, { n: '10', l: 'people in my team' }, { n: '03', l: 'issues of my own magazine' }],
+    next: '(02) The library ↓',
+    libMeta: 'The library', libTitle: 'Library', libScript: 'pick one',
+    hintD: 'Pull a book — it opens as a spread', hintM: 'Swipe the shelf, tap a book',
+    shelfLabel: 'Bookshelf — portfolio sections',
+    open: 'Open book: ', close: 'Close book', closeShort: 'Close',
+    ctMeta: 'Contact', ctTitle: 'Let’s talk', ctScript: 'hello',
+    ctNote: 'Write to me — I usually answer within a couple of days.',
+    email: 'Email', resume: 'Resume PDF', resumeAria: 'Resume PDF — coming soon (TBD)',
+    loc: 'Seoul, South Korea', toTop: 'Back to top', photoAlt: 'Polina Politova in a blue lace frame',
+    task: 'Task', did: 'What I did', res: 'Results', gal: 'Gallery', fig: 'Fig.', videoLbl: 'Campaign video',
+    city: 'Seoul', navExp: 'Experience',
+    xpMeta: 'Experience', xpTitle: 'Experience', xpScript: 'so far',
+    xpEdu: 'BA Business Administration, Sejong University (2026 —) · British Higher School of Art & Design · Coddy (3 diplomas)',
+    xp: [
+      { r: 'Marketing Director', o: 'ISA, Sejong University · team of 10', d: 'Fall 2026 — now' },
+      { r: 'Lead Graphic Designer', o: 'ISA, Sejong University', d: 'Spring 2026' },
+      { r: 'SMM Volunteer', o: 'Society for Kindness (remote) · 20+ posts for the charity’s VK community', d: 'Jul–Aug 2025' },
+      { r: 'Sales Consultant', o: 'Gloria Jeans', d: '2025' },
+      { r: 'Short Course', o: 'UWC Dilijan, Armenia · co-curated a sustainability “Met Gala”', d: 'Jul 2024' },
+      { r: 'Marketing Design Intern', o: 'AIRI, Moscow · booklets, press wall, Telegram stickers in Figma', d: 'Jul 2022' }
+    ],
+    q1: '“She has repeatedly shown the ability to translate creative ideas into measurable outcomes.”',
+    q1by: '— President, International Student Association, Sejong University',
+    q2: '“Despite her young age, Polina proved herself to be a mature and motivated specialist.”',
+    q2by: '— Alexandra Broytman, Marketing & Communications Director, AIRI',
+    pkLabel: 'Break the pumpkin — go to my email',
+    pkHint: 'Break the pumpkin on the shelf — its pieces will take you to my email'
+  },
+  ru: {
+    portfolio: 'Портфолио', navLabel: 'Меню', navWork: 'Работы', navAbout: 'Обо мне', navContact: 'Контакты', langLabel: 'Язык',
+    heroLabel: 'Знакомство', role: 'Портфолио — 2026', script: 'портфолио',
+    kicker: 'Маркетинг- и бренд-дизайнер',
+    intro: 'Я Полина — студентка бизнес-факультета, которая занимается дизайном. Я строю визуальные системы и кампании, а потом проверяю по цифрам, сработали ли они. В прошлом семестре это 366 тыс. просмотров для студенческого клуба.',
+    facts: [{ n: '366K', l: 'просмотров за 90 дней — ISA' }, { n: '10', l: 'человек в моей команде' }, { n: '03', l: 'выпуска своего журнала' }],
+    next: '(02) Библиотека ↓',
+    libMeta: 'Библиотека', libTitle: 'Библиотека', libScript: 'выбирай',
+    hintD: 'Достаньте книгу — она откроется разворотом', hintM: 'Листайте полку, нажмите на книгу',
+    shelfLabel: 'Книжная полка — разделы портфолио',
+    open: 'Открыть книгу: ', close: 'Закрыть книгу', closeShort: 'Закрыть',
+    ctMeta: 'Контакты', ctTitle: 'Давайте поговорим', ctScript: 'привет',
+    ctNote: 'Пишите — обычно я отвечаю в течение пары дней.',
+    email: 'Почта', resume: 'Резюме PDF', resumeAria: 'Резюме PDF — скоро (TBD)',
+    loc: 'Сеул, Южная Корея', toTop: 'Наверх', photoAlt: 'Полина Политова в синей кружевной рамке',
+    task: 'Задача', did: 'Что я сделала', res: 'Результаты', gal: 'Галерея', fig: 'Рис.', videoLbl: 'Видео кампании',
+    city: 'Сеул', navExp: 'Опыт',
+    xpMeta: 'Опыт', xpTitle: 'Опыт', xpScript: 'пока что',
+    xpEdu: 'Бакалавриат, бизнес-администрирование, Университет Сэджон (с 2026) · Британская высшая школа дизайна · Coddy (3 диплома)',
+    xp: [
+      { r: 'Marketing Director', o: 'ISA, Университет Сэджон · команда из 10 человек', d: 'Осень 2026 — сейчас' },
+      { r: 'Lead Graphic Designer', o: 'ISA, Университет Сэджон', d: 'Весна 2026' },
+      { r: 'SMM-волонтёр', o: 'Society for Kindness (удалённо) · 20+ постов для VK-сообщества организации', d: 'Июль–авг 2025' },
+      { r: 'Консультант-продавец', o: 'Gloria Jeans', d: '2025' },
+      { r: 'Летняя программа', o: 'UWC Dilijan, Армения · сокурировала «Met Gala» об устойчивом развитии', d: 'Июль 2024' },
+      { r: 'Стажёр-дизайнер в маркетинге', o: 'AIRI, Москва · буклеты, пресс-волл, стикеры для Telegram в Figma', d: 'Июль 2022' }
+    ],
+    q1: '«Она не раз доказала, что умеет превращать творческие идеи в измеримые результаты».',
+    q1by: '— Президент Международной студенческой ассоциации, Университет Сэджон',
+    q2: '«Несмотря на юный возраст, Полина проявила себя как зрелый и мотивированный специалист».',
+    q2by: '— Александра Бройтман, директор по маркетингу и коммуникациям, AIRI',
+    pkLabel: 'Разбить тыкву — перейти к моей почте',
+    pkHint: 'Разбейте тыкву на полке — осколки приведут к моей почте'
+  }
+};
+
+var Q_ISA = { q: { en: '“She has repeatedly shown the ability to translate creative ideas into measurable outcomes.”', ru: '«Она не раз доказала, что умеет превращать творческие идеи в измеримые результаты».' },
+  by: { en: '— President, International Student Association, Sejong University', ru: '— Президент Международной студенческой ассоциации, Университет Сэджон' } };
+var Q_AIRI = { q: { en: '“Despite her young age, Polina proved herself to be a mature and motivated specialist.”', ru: '«Несмотря на юный возраст, Полина проявила себя как зрелый и мотивированный специалист».' },
+  by: { en: '— Alexandra Broytman, Marketing & Communications Director, AIRI', ru: '— Александра Бройтман, директор по маркетингу и коммуникациям, AIRI' } };
+var Q_ISA2 = { q: { en: '“She led a full rebranding of our social media aesthetic, giving it a cleaner and more cohesive visual identity.”', ru: '«Она провела полный ребрендинг нашей эстетики в соцсетях и сделала визуальную айдентику чище и целостнее».' },
+  by: { en: '— President, International Student Association, Sejong University', ru: '— Президент Международной студенческой ассоциации, Университет Сэджон' } };
+var Q_ISA3 = { q: { en: '“Under her direction, our events have seen improved participation rates.”', ru: '«Под её руководством на наши мероприятия стало приходить больше участников».' },
+  by: { en: '— President, International Student Association, Sejong University', ru: '— Президент Международной студенческой ассоциации, Университет Сэджон' } };
+var Q_UWC = { q: { en: '“Polina Politova is a talented, versatile person with an outstanding combination of analytical thinking and creative skills.”', ru: '«Полина Политова — талантливый, разносторонний человек с выдающимся сочетанием аналитического мышления и креативности».' },
+  by: { en: '— Maria Usacheva, Head of the Art History Laboratory, UWC Dilijan Short Course', ru: '— Мария Усачева, руководитель лаборатории истории искусств, краткосрочный курс UWC Dilijan' } };
+var Q_BECK = { q: { en: '“She is a willing participant in all classroom activities, and frequently provides intelligent and insightful contributions to classroom discussions.”', ru: '«Она охотно участвует во всех занятиях и часто приносит в обсуждения умные и глубокие мысли».' },
+  by: { en: '— Peter Beck, GCSE English Literature, Algorithm School', ru: '— Питер Бек, GCSE English Literature, Algorithm School' } };
+
+var BOOKS = [
+  {
+    id: 'isa', no: '01', roman: 'I',
+    spine: { en: 'ISA', ru: 'ISA' }, type: { en: 'Case · Identity · Social', ru: 'Кейс · Айдентика · SMM' },
+    script: { en: 'the feed', ru: 'лента' },
+    kicker: { en: 'Case 01 · Identity · Social · Campaign', ru: 'Кейс 01 · Айдентика · SMM · Кампания' },
+    title: { en: 'ISA Rebrand', ru: 'Ребрендинг ISA' },
+    lead: { en: 'Sejong University’s International Student Association had an Instagram where every post looked different.', ru: 'У Международной студенческой ассоциации Университета Сэджон был Instagram, где каждый пост выглядел по-своему.' },
+    s1p: { en: 'Give @sejong_isa one recognisable visual system — and build up to the Back-to-School event on 23 September.', ru: 'Собрать для @sejong_isa единую узнаваемую визуальную систему и подвести аудиторию к событию Back-to-School 23 сентября.' },
+    s1items: { en: ['Before: blue updates, masquerade reds, mixed fonts — no shared look.'], ru: ['До: синие объявления, «маскарадный» красный, разные шрифты — никакой общей системы.'] },
+    s2items: {
+      en: ['Wrote the brand book: wine red + white with warm cream accents, Bebas Neue Cyrillic titles, Georgia Pro Condensed text, recurring stars and the ISA cat.',
+        'Set the tone of voice: warm, community-first, bilingual-friendly — less promo, more stories.',
+        'Planned the semester: 17 posts, 12 reel covers and 8 A3 posters, plus a buffer of evergreen posts.',
+        'Ran the Back-to-School campaign, 2–21 Sept: 4 posts + 4 reels, “What’s in my bag?” and a film parody, a mark-the-date reminder and a word-search story game — the first 15 got a gift.',
+        'Lead the 10-person marketing team as Marketing Director (promoted from Lead Graphic Designer after one semester).'],
+      ru: ['Написала брендбук: винно-красный и белый с тёплыми кремовыми акцентами, заголовки — Bebas Neue Cyrillic, текст — Georgia Pro Condensed, сквозные звёзды и кот ISA.',
+        'Задала тон коммуникации: тёплый, про сообщество, удобный для двух языков — меньше промо, больше историй.',
+        'Спланировала семестр: 17 постов, 12 обложек для рилс и 8 постеров A3, плюс запас вечнозелёных постов.',
+        'Провела кампанию Back-to-School, 2–21 сентября: 4 поста + 4 рилс, «Что у меня в сумке?» и пародия на фильм, напоминание о дате и игра-филворд в сторис — первые 15 получили подарок.',
+        'Руковожу маркетинговой командой из 10 человек как Marketing Director (повышена с позиции Lead Graphic Designer через семестр).']
+    },
+    stats: [
+      { n: '366K', l: { en: 'views in 90 days', ru: 'просмотров за 90 дней' } },
+      { n: '79%', l: { en: 'of views from non-followers', ru: 'просмотров — от неподписчиков' } },
+      { n: '259K', l: { en: 'views on one reel', ru: 'просмотров одного рилс' } },
+      { n: '+187', l: { en: 'net new followers', ru: 'новых подписчиков (нетто)' } },
+      { n: '28K+', l: { en: 'interactions overall', ru: 'взаимодействий всего' } },
+      { n: '9.6K', l: { en: 'shares of the top reel', ru: 'репостов топового рилс' } }
+    ],
+    note: { en: 'Instagram Insights for @sejong_isa, 1 Aug – 29 Oct 2026: 233K unique viewers; reels alone brought 297K views. Top reel “Week 7 hits different”: 259K views, 14K likes, 9.6K shares; regular posts get 2–4K views each.', ru: 'Instagram Insights @sejong_isa, 1 авг – 29 окт 2026: 233K уникальных зрителей; одни только рилс собрали 297K просмотров. Топовый рилс «Week 7 hits different»: 259K просмотров, 14K лайков, 9,6K репостов; обычные посты набирают 2–4K просмотров.' },
+    video: './assets/c08dc60cf927297862900a36a9a60849.mp4',
+    videoCap: { en: 'September events — campaign reel', ru: 'September events — рилс кампании' },
+    images: [
+      { src: IMG.after, cap: { en: 'After — one wine-red system', ru: 'После — единая винно-красная система' } },
+      { src: IMG.before, cap: { en: 'Before', ru: 'До' } },
+      { src: './assets/f130a64fed9de5db83575e79e6ddfde6.jpg', cap: { en: 'Brand book — overview & palette', ru: 'Брендбук — обзор и палитра' } },
+      { src: './assets/40490109b9913b148ccc263e669118b2.jpg', cap: { en: 'Brand book — content & principles', ru: 'Брендбук — контент и принципы' } },
+      { src: './assets/941984bab09a87d864420bc06e9b3600.jpg', cap: { en: 'Cover of the 259K-view reel', ru: 'Обложка рилс на 259K' } },
+      { src: './assets/3cc2d2384664abe3e59b8f8ddbffdcc6.jpg', cap: { en: 'What to expect from ISA in fall', ru: 'Чего ждать от ISA осенью' } },
+      { src: IMG.words, cap: { en: 'Word-search story game', ru: 'Игра-филворд в сторис' } },
+      { src: './assets/8342157246b9adca71045c9c7af223d6.jpg', cap: { en: 'ISA postcard', ru: 'Открытка ISA' } },
+      { src: './assets/c29b2e035ebaafa7437c7ef33fc36e11.jpg', cap: { en: 'Insights — 90 days', ru: 'Статистика за 90 дней' } },
+      { src: './assets/6df0b3f7785ea7a74e9d794f876093db.jpg', cap: { en: 'Insights — top content', ru: 'Статистика — топ публикаций' } }
+    ],
+    quotes: [Q_ISA2, Q_ISA]
+  },
+  {
+    id: 'lumina', no: '02', roman: 'II', wide: true,
+    spine: { en: 'Lumina', ru: 'Lumina' }, type: { en: 'Case · Product · Brand', ru: 'Кейс · Продукт · Бренд' },
+    script: { en: 'morning', ru: 'утро' },
+    kicker: { en: 'Case 02 · Product · Brand · Strategy', ru: 'Кейс 02 · Продукт · Бренд · Стратегия' },
+    title: { en: 'Lumina', ru: 'Lumina' },
+    lead: { en: '“Your life — your plan.” A calm all-in-one morning app: weather, route, calendar and wellbeing on one screen, with Lumi, an AI companion.', ru: '«Твоя жизнь — твой план». Спокойное утреннее приложение «всё в одном»: погода, маршрут, календарь и самочувствие на одном экране, вместе с AI-компаньоном Луми.' },
+    s1p: { en: 'Design a calm all-in-one morning app from scratch — and check whether people actually want it.', ru: 'С нуля придумать спокойное утреннее приложение «всё в одном» — и проверить, нужно ли оно людям.' },
+    s1items: { en: ['Role: solo founder, end to end.'], ru: ['Роль: соло-основатель, весь цикл.'] },
+    s2items: {
+      en: ['User research: surveyed 33 people and mapped the problem to a solution.', 'Product concept and audience — one screen for weather, route, calendar and wellbeing, plus Lumi.', 'Brand identity and the pitch deck.', 'Business model: freemium, unit economics, SWOT and the 4P marketing mix.'],
+      ru: ['Исследование: опросила 33 человека и связала проблему с решением.', 'Концепция продукта и аудитория — один экран для погоды, маршрута, календаря и самочувствия, плюс Луми.', 'Айдентика бренда и питч-дек.', 'Бизнес-модель: freemium, юнит-экономика, SWOT-анализ и маркетинг-микс 4P.']
+    },
+    stats: [
+      { n: '90%', l: { en: 'interest among 33 surveyed users', ru: 'интереса среди 33 опрошенных' } },
+      { n: '61%', l: { en: 'preferred the freemium model', ru: 'выбрали модель freemium' } },
+      { n: '9×', l: { en: 'projected LTV / CAC (healthy = 3×)', ru: 'прогнозный LTV / CAC (норма — 3×)' } },
+      { n: 'M14', l: { en: 'projected break-even month', ru: 'прогнозный месяц выхода в ноль' } }
+    ],
+    images: [
+      { src: IMG.lCover, cap: { en: 'Pitch deck cover', ru: 'Обложка питч-дека' } },
+      { src: IMG.lResearch, cap: { en: 'Problem & solution', ru: 'Проблема и решение' } },
+      { src: IMG.lProduct, cap: { en: 'Product & audience', ru: 'Продукт и аудитория' } },
+      { src: IMG.lSwot, cap: { en: 'SWOT', ru: 'SWOT-анализ' } },
+      { src: IMG.l4p, cap: { en: '4P marketing mix', ru: 'Маркетинг-микс 4P' } }
+    ]
+  },
+  {
+    id: 'bookaholic', no: '03', roman: 'III',
+    spine: { en: 'Bookaholic', ru: 'Bookaholic' }, type: { en: 'Case · Editorial · Writing', ru: 'Кейс · Журнал · Тексты' },
+    script: { en: 'for readers', ru: 'для читающих' },
+    kicker: { en: 'Case 03 · Editorial · Writing · Layout', ru: 'Кейс 03 · Журнал · Тексты · Вёрстка' },
+    title: { en: 'Bookaholic', ru: 'Bookaholic' },
+    lead: { en: '“The bookaholic” is a magazine for people who read. I write, edit and lay it out myself; issue 03 is about obsession, true crime and escaping reality.', ru: '«The bookaholic» — журнал для читающих людей. Я сама пишу, редактирую и верстаю его; третий выпуск — об одержимости, тру-крайме и побеге от реальности.' },
+    s1p: { en: 'Turn a love of books into a magazine with its own voice — and put together issue 03 from the cover to the last page.', ru: 'Превратить любовь к книгам в журнал со своим голосом — и собрать третий выпуск от обложки до последней страницы.' },
+    s2items: {
+      en: ['Concept of the issue: obsession, true crime and “the most mysterious book in the world” — with a hidden message coded into the pages.',
+        'Wrote every rubric: book of the month (Codex Seraphinianus), genre picks, a personal story, “my guilty pleasure”, book-fair season in Moscow, an interview and a meme page.',
+        'Art direction and layout in Canva: wine and cream palette, serif display type, photo collages, A4 format.'],
+      ru: ['Концепция выпуска: одержимость, тру-крайм и «самая таинственная книга в мире» — плюс скрытое послание, зашифрованное в страницах.',
+        'Написала все рубрики: книга месяца («Кодекс Серафини»), подборки по жанрам, личная история, «my guilty pleasure», сезон книжных ярмарок в Москве, интервью и страница мемов.',
+        'Арт-дирекшн и вёрстка в Canva: винная и кремовая палитра, антиква в заголовках, фотоколлажи, формат A4.']
+    },
+    stats: [
+      { n: '3', l: { en: 'issues since January 2025', ru: 'выпуска с января 2025' } },
+      { n: '12', l: { en: 'A4 pages', ru: 'страниц A4' } },
+      { n: '8', l: { en: 'rubrics in the issue', ru: 'рубрик в выпуске' } },
+      { n: 'TBD', l: { en: 'readers & reach', ru: 'читатели и охват' } }
+    ],
+    note: { en: 'Issue 01 — January 2025 · issue 02 — April 2025 · issue 03 — 2025.', ru: 'Выпуск 01 — январь 2025 · выпуск 02 — апрель 2025 · выпуск 03 — 2025.' },
+    images: [
+      { src: IMG.b1, cap: { en: 'Cover, issue 03', ru: 'Обложка, выпуск 03' } },
+      { src: './assets/e2cd411da8ca8832a4ab35c711cfc5f2.jpg', cap: { en: 'Cover, issue 01', ru: 'Обложка, выпуск 01' } },
+      { src: './assets/2fb155c6226bb9391abd000401f7e5dc.jpg', cap: { en: 'Cover, issue 02 — “spring exacerbation”', ru: 'Обложка, выпуск 02 — «spring exacerbation»' } },
+      { src: IMG.b2, cap: { en: 'Contents', ru: 'Оглавление' } },
+      { src: IMG.b3, cap: { en: 'How it started', ru: 'История создания' } },
+      { src: IMG.b6, cap: { en: 'Genre picks', ru: 'Подборка по жанрам' } },
+      { src: IMG.b8, cap: { en: 'Story time', ru: 'Story time' } },
+      { src: IMG.b9, cap: { en: 'Book fairs', ru: 'Книжные ярмарки' } }
+    ]
+  },
+  {
+    id: 'planty', no: '04', roman: 'IV', wide: true,
+    spine: { en: 'planty', ru: 'planty' }, type: { en: 'Case · Code · Python', ru: 'Кейс · Код · Python' },
+    script: { en: 'go green', ru: 'эко' },
+    kicker: { en: 'Case · Code · Python', ru: 'Кейс · Код · Python' },
+    title: { en: 'Planty', ru: 'Planty' },
+    lead: { en: 'An eco Telegram bot in Python that helps people live greener: tips and facts, recycling maps, an AI eco-helper — and points for sorting waste that turn into volunteer hours.', ru: 'Эко-бот для Telegram на Python, который помогает жить экологичнее: советы и факты, карты переработки, AI-экопомощник — и баллы за сортировку мусора, которые превращаются в волонтёрские часы.' },
+    s1p: { en: 'Make eco-friendly habits easy to keep: teach, track progress and reward real actions like sorting waste.', ru: 'Сделать экологичные привычки простыми: учить, отслеживать прогресс и награждать за реальные действия — например, сортировку мусора.' },
+    s2items: {
+      en: ['Wrote the bot in Python with pyTelegramBotAPI; user data is saved between sessions.',
+        'Bilingual onboarding (English / Russian): name, optional age, city.',
+        'Menu with six functions: my score, recycling maps, AI eco-helper, random eco fact or tip, photo of waste sorting, rules.',
+        'Recycling maps and guides for Russia, New Zealand, South Korea and the USA.',
+        'Points system: users send photos of sorted waste, the admin checks them and awards points; 500 points = 1 volunteer hour on dobro.rf, +30 minutes for every extra 1,000.',
+        'Admin tools: awarding points, banning and unbanning users.'],
+      ru: ['Написала бота на Python с pyTelegramBotAPI; данные пользователей сохраняются между сессиями.',
+        'Двуязычное знакомство (английский / русский): имя, возраст по желанию, город.',
+        'Меню из шести функций: мои баллы, карты переработки, AI-экопомощник, случайный экофакт или совет, фото сортировки, правила.',
+        'Карты и гайды по переработке для России, Новой Зеландии, Южной Кореи и США.',
+        'Система баллов: пользователи присылают фото сортировки, админ проверяет и начисляет баллы; 500 баллов = 1 час волонтёрства на добро.рф, +30 минут за каждую дополнительную 1000.',
+        'Инструменты админа: начисление баллов, бан и разбан пользователей.']
+    },
+    stats: [
+      { n: '6', l: { en: 'functions in the bot menu', ru: 'функций в меню бота' } },
+      { n: '2', l: { en: 'languages — EN / RU', ru: 'языка — EN / RU' } },
+      { n: '4', l: { en: 'countries with recycling maps', ru: 'страны с картами переработки' } },
+      { n: '500', l: { en: 'points = 1 volunteer hour', ru: 'баллов = 1 час волонтёрства' } }
+    ],
+    images: [{ src: './assets/515f3e7bd9dc89a199383fbc160f89ed.jpg', cap: { en: 'Eco bot Planty — “Sort waste, earn volunteer hours and help the planet”', ru: 'Эко-бот Planty — «Сортируй мусор, получай за это волонтёрские часы и помогай планете»' } }]
+  },
+  {
+    id: 'works', no: '05', roman: 'V', wide: true,
+    spine: { en: 'My Works', ru: 'Мои работы' }, type: { en: 'Selected projects', ru: 'Избранные проекты' },
+    script: { en: 'early days', ru: 'начало' },
+    kicker: { en: 'Selected projects · 2022–2025', ru: 'Избранные проекты · 2022–2025' },
+    title: { en: 'My Works', ru: 'Мои работы' },
+    lead: { en: 'Projects from before ISA — an internship, volunteering and a summer course.', ru: 'Проекты до ISA — стажировка, волонтёрство и летняя программа.' },
+    s1p: { en: 'Bring ideas to life in teams outside university — from a summer-school campaign at AIRI to a sustainability show at UWC Dilijan.', ru: 'Воплощать идеи в командах за пределами университета — от кампании летней школы в AIRI до шоу об устойчивом развитии в UWC Dilijan.' },
+    s2items: {
+      en: ['AIRI (Artificial Intelligence Research Institute), Moscow — 4-week internship in the Marketing Department, 4–29 Jul 2022: learned Figma, made booklets and materials for the “Summer school with AIRI” project, Telegram stickers and press-wall layouts.',
+        'UWC Dilijan, Armenia, Jul 2024 — co-curated a Sustainability Day “Met Gala”: came up with dresses made from waste, led the collection of materials around campus, facilitated five groups, prepared two presentations on Trash Art and was the main speaker at the exhibition.',
+        'Society for Kindness — SMM Volunteer, remote, Jul–Aug 2025: 20+ posts for the charity’s VK community.',
+        'British Higher School of Art and Design — “Inspired”, a work from the Art and Design course.',
+        'Essay “Three Cases of Value Creation in Russian Business” — Yandex Market, DDX Fitness and news Telegram channels.'],
+      ru: ['AIRI (Институт искусственного интеллекта), Москва — 4-недельная стажировка в отделе маркетинга, 4–29 июля 2022: освоила Figma, делала буклеты и материалы для проекта «Летняя школа с AIRI», стикеры для Telegram и макеты пресс-волла.',
+        'UWC Dilijan, Армения, июль 2024 — сокурировала «Met Gala» ко Дню устойчивого развития: придумала платья из отходов, организовала сбор материалов по кампусу, вела пять групп, подготовила две презентации о Trash Art и была главным спикером выставки.',
+        'Society for Kindness — SMM-волонтёр, удалённо, июль–авг 2025: 20+ постов для VK-сообщества благотворительной организации.',
+        'Британская высшая школа дизайна — «Inspired», работа с курса «Искусство и дизайн».',
+        'Эссе «Три кейса создания ценности в российском бизнесе» — Яндекс Маркет, DDX Fitness и новостные Telegram-каналы.']
+    },
+    stats: [
+      { n: '4', l: { en: 'weeks in AIRI’s marketing team', ru: 'недели в маркетинге AIRI' } },
+      { n: '5', l: { en: 'groups facilitated at UWC', ru: 'групп под моим руководством в UWC' } },
+      { n: '2', l: { en: 'presentations on Trash Art', ru: 'презентации о Trash Art' } },
+      { n: '20+', l: { en: 'posts for the charity’s VK community', ru: 'постов для VK-сообщества организации' } }
+    ],
+    images: [
+      { src: './assets/6d9cb253b54566a8daa80932daf0aa20.jpg', cap: { en: 'Trash Fashion — my presentation for the UWC “Met Gala”', ru: 'Trash Fashion — моя презентация для «Met Gala» в UWC' } },
+      { src: './assets/cf563bb2a48d7e59563e09744889b679.jpg', cap: { en: 'Trash Fashion — sketches', ru: 'Trash Fashion — эскизы' } },
+      { src: './assets/67008d62918b401a319ac70f00a8b9f2.jpg', cap: { en: 'Trash Fashion — inspiration: nature', ru: 'Trash Fashion — вдохновение: природа' } },
+      { src: './assets/b29514787b4d8b51c0fa879ff40871f8.jpg', cap: { en: '“Inspired” — work from the Art and Design course, British Higher School of Art and Design', ru: '«Inspired» — работа с курса «Искусство и дизайн», Британская высшая школа дизайна' } },
+      { src: '', cap: { en: 'AIRI booklets & press wall', ru: 'Буклеты и пресс-волл AIRI' } },
+      { src: '', cap: { en: 'Telegram stickers', ru: 'Стикеры для Telegram' } },
+      { src: '', cap: { en: 'VK posts', ru: 'Посты для VK' } }
+    ],
+    quotes: [Q_AIRI, Q_UWC]
+  },
+  {
+    id: 'diplomas', no: '06', roman: 'VI',
+    spine: { en: 'Diplomas', ru: 'Дипломы' }, type: { en: 'Education · Certificates', ru: 'Образование · Сертификаты' },
+    script: { en: 'learning', ru: 'учёба' },
+    kicker: { en: 'Education · Certificates · Letters', ru: 'Образование · Сертификаты · Рекомендации' },
+    title: { en: 'Diplomas', ru: 'Дипломы' },
+    lead: { en: 'Where my design, code and language skills come from.', ru: 'Откуда мои навыки в дизайне, коде и языках.' },
+    h1: { en: 'Education', ru: 'Образование' }, h2: { en: 'Languages & tools', ru: 'Языки и инструменты' },
+    h3: { en: 'In numbers', ru: 'В цифрах' }, h4: { en: 'Documents', ru: 'Документы' },
+    s1items: {
+      en: ['BA Business Administration — Sejong University, Seoul (2026 —)',
+        'IELTS Academic — overall 7.0, Reading 8.5 (Aug 2026)',
+        '“Art and Design” course — British Higher School of Art and Design, two certificates (#9874, #11946)',
+        'Three diplomas — Coddy coding school',
+        'English Language Course, 30 hours — MLI International Centre, UCD Dublin (Jul 2025)',
+        'JDI: UWC Short Course “Attitudes and Relations Lab” — UWC Dilijan, Armenia (Jul 2024)',
+        '3-week Cultural Experience Program — Center for International Education, Sejong University (Jul 2023)',
+        'GCSE English Literature — Algorithm School, Moscow (2 years)',
+        'Google Data Analytics — in progress'],
+      ru: ['Бакалавриат, бизнес-администрирование — Университет Сэджон, Сеул (с 2026)',
+        'IELTS Academic — общий балл 7.0, Reading 8.5 (август 2026)',
+        'Курс «Искусство и дизайн» — Британская высшая школа дизайна, два сертификата (№9874, №11946)',
+        'Три диплома — школа программирования Coddy',
+        'Курс английского языка, 30 часов — MLI International Centre, UCD Dublin (июль 2025)',
+        'JDI: краткосрочный курс UWC «Лаборатория позиций и отношений» — UWC Dilijan, Армения (июль 2024)',
+        '3-недельная программа культурного опыта — Центр международного образования, Университет Сэджон (июль 2023)',
+        'GCSE English Literature — Algorithm School, Москва (2 года)',
+        'Google Data Analytics — в процессе']
+    },
+    s2items: { en: ['Russian — native', 'English — C1, IELTS Academic 7.0', 'Korean — learning', 'Canva · Figma'], ru: ['Русский — родной', 'Английский — C1, IELTS Academic 7.0', 'Корейский — изучаю', 'Canva · Figma'] },
+    stats: [
+      { n: '7.0', l: { en: 'IELTS Academic overall', ru: 'IELTS Academic, общий балл' } },
+      { n: '8.5', l: { en: 'IELTS Reading', ru: 'IELTS Reading' } },
+      { n: '3', l: { en: 'study programmes abroad — Armenia, Ireland, Korea', ru: 'учебные программы за рубежом — Армения, Ирландия, Корея' } },
+      { n: '5', l: { en: 'recommendation letters', ru: 'рекомендательных писем' } }
+    ],
+    images: [
+      { src: './assets/224468d54cce9283d8154c679e4436df.jpg', cap: { en: 'Art and Design — certificate #9874', ru: 'Искусство и дизайн — сертификат №9874' } },
+      { src: './assets/07facc22f8d281207ff1b3cb30656daf.jpg', cap: { en: 'Art and Design — certificate #11946', ru: 'Искусство и дизайн — сертификат №11946' } },
+      { src: './assets/07c3ffb1e4a02db8427b27e089e2df09.jpg', cap: { en: 'UWC Short Course 2024', ru: 'Курс UWC 2024' } },
+      { src: './assets/8e191c2e63199dd09722362da2dffdf7.jpg', cap: { en: 'English course, UCD Dublin', ru: 'Курс английского, UCD Dublin' } },
+      { src: './assets/57842d42cd26004a1ce10a09ea808c0a.jpg', cap: { en: 'Cultural Experience Program, Sejong', ru: 'Программа культурного опыта, Сэджон' } },
+      { src: '', cap: { en: 'Coddy diplomas', ru: 'Дипломы Coddy' } }
+    ],
+    quotes: [Q_BECK]
+  },
+  {
+    id: 'about', no: '07', roman: 'VII', portrait: true, wide: true,
+    spine: { en: 'About me', ru: 'Обо мне' }, type: { en: 'Bio · Experience', ru: 'Био · Опыт' },
+    script: { en: 'hello', ru: 'привет' },
+    kicker: { en: 'Hi, I’m Polina', ru: 'Привет, я Полина' },
+    title: { en: 'About me', ru: 'Обо мне' },
+    lead: { en: 'Business Administration student at Sejong University in Seoul. I joined the International Student Association in Spring 2026 as Lead Graphic Designer and was promoted to Marketing Director for the fall semester — now leading a 10-person team.', ru: 'Студентка бизнес-администрирования в Университете Сэджон в Сеуле. Весной 2026 года пришла в Международную студенческую ассоциацию как Lead Graphic Designer, а к осеннему семестру стала Marketing Director — теперь руковожу командой из 10 человек.' },
+    h1: { en: 'Background', ru: 'Бэкграунд' }, h2: { en: 'Beyond work', ru: 'Помимо работы' }, h3: { en: 'In numbers', ru: 'В цифрах' },
+    s1p: { en: 'Design training from the British Higher School of Art and Design, three diplomas from Coddy coding school, and a marketing internship at AIRI in Moscow.', ru: 'Дизайн-образование в Британской высшей школе дизайна, три диплома школы программирования Coddy и маркетинговая стажировка в AIRI в Москве.' },
+    s1items: { en: ['Languages — Russian (native) · English C1, IELTS 7.0 · Korean (learning)', 'Tools — Canva · Figma · Google Data Analytics (in progress)'], ru: ['Языки — русский (родной) · английский C1, IELTS 7.0 · корейский (изучаю)', 'Инструменты — Canva · Figma · Google Data Analytics (в процессе)'] },
+    s2items: {
+      en: ['100+ volunteer hours', 'My own reading magazine — “The bookaholic”, three issues so far', 'Short course at UWC Dilijan, Armenia (Jul 2024)'],
+      ru: ['100+ часов волонтёрства', 'Свой журнал о книгах — «The bookaholic», уже три выпуска', 'Летняя программа UWC Dilijan, Армения (июль 2024)']
+    },
+    stats: [
+      { n: '10', l: { en: 'people in the team I lead', ru: 'человек в моей команде' } },
+      { n: '3', l: { en: 'languages — RU, EN, KO', ru: 'языка — RU, EN, KO' } },
+      { n: '100+', l: { en: 'volunteer hours', ru: 'часов волонтёрства' } },
+      { n: '5', l: { en: 'recommendation letters', ru: 'рекомендательных писем' } }
+    ],
+    images: [{ src: './assets/4433745fb0c0aabeb0b3b305be1a948f.jpg', cap: { en: 'Seoul, Children’s Grand Park', ru: 'Сеул, Children’s Grand Park' } }],
+    quotes: [Q_UWC]
+  },
+  {
+    id: 'workexp', no: '08', roman: 'VIII',
+    spine: { en: 'Work experience', ru: 'Опыт работы' }, type: { en: 'Roles · 2022–2026', ru: 'Должности · 2022–2026' },
+    script: { en: 'so far', ru: 'пока что' },
+    kicker: { en: 'Experience · 2022–2026', ru: 'Опыт · 2022–2026' },
+    title: { en: 'Work experience', ru: 'Опыт работы' },
+    lead: { en: 'From a design internship in Moscow to running the marketing team of a student association in Seoul.', ru: 'От дизайн-стажировки в Москве до руководства маркетинговой командой студенческой ассоциации в Сеуле.' },
+    h1: { en: 'Roles', ru: 'Должности' }, h2: { en: 'What I did there', ru: 'Чем занималась' }, h3: { en: 'In numbers', ru: 'В цифрах' },
+    s1items: {
+      en: ['Marketing Director — ISA, Sejong University · Fall 2026 — now', 'Lead Graphic Designer — ISA, Sejong University · Spring 2026', 'SMM Volunteer — Society for Kindness (remote) · Jul–Aug 2025', 'Sales Consultant — Gloria Jeans · 2025', 'Marketing Design Intern — AIRI, Moscow · Jul 2022'],
+      ru: ['Marketing Director — ISA, Университет Сэджон · осень 2026 — сейчас', 'Lead Graphic Designer — ISA, Университет Сэджон · весна 2026', 'SMM-волонтёр — Society for Kindness (удалённо) · июль–авг 2025', 'Консультант-продавец — Gloria Jeans · 2025', 'Стажёр-дизайнер в маркетинге — AIRI, Москва · июль 2022']
+    },
+    s2items: {
+      en: ['ISA: lead a 10-person marketing team; rebranded the Instagram — 366K views in 90 days.', 'ISA: designed posts, reel covers and posters before being promoted after one semester.', 'Society for Kindness: 20+ posts for the charity’s VK community.', 'Gloria Jeans: worked with customers in retail sales.', 'AIRI: booklets, a press wall and Telegram stickers in Figma.'],
+      ru: ['ISA: руковожу маркетинговой командой из 10 человек; сделала ребрендинг Instagram — 366K просмотров за 90 дней.', 'ISA: дизайн постов, обложек для рилс и постеров — через семестр повысили.', 'Society for Kindness: 20+ постов для VK-сообщества организации.', 'Gloria Jeans: работа с покупателями в рознице.', 'AIRI: буклеты, пресс-волл и стикеры для Telegram в Figma.']
+    },
+    stats: [
+      { n: '5', l: { en: 'roles since 2022', ru: 'должностей с 2022 года' } },
+      { n: '10', l: { en: 'people in the team I lead', ru: 'человек в моей команде' } },
+      { n: '1', l: { en: 'semester from Designer to Director', ru: 'семестр от дизайнера до директора' } },
+      { n: '5', l: { en: 'recommendation letters', ru: 'рекомендательных писем' } }
+    ],
+    images: [],
+    quotes: [Q_ISA3, Q_AIRI]
+  }
+];
+
+var MO = {"W":960,"H":578,"cx":493.18,"cy":320.0,"floor":530,"p":[[0,0,131,177,430,27,1],[133,0,43,68,316,268,0],[178,0,46,68,239,287,0],[226,0,45,64,548,130,0],[273,0,32,64,312,336,0],[307,0,30,62,338,335,0],[339,0,63,61,531,163,0],[404,0,49,61,360,448,0],[455,0,35,61,240,355,0],[492,0,44,58,244,268,0],[538,0,65,58,381,219,0],[605,0,26,57,303,174,0],[633,0,38,55,709,260,0],[673,0,42,55,429,318,0],[717,0,41,54,583,312,0],[760,0,43,54,291,326,0],[805,0,42,54,407,375,0],[849,0,56,54,553,209,0],[907,0,55,54,399,193,0],[964,0,35,54,288,273,0],[0,179,30,53,598,397,0],[32,179,39,53,448,476,0],[73,179,37,53,444,200,0],[112,179,39,52,318,218,0],[153,179,50,52,694,337,0],[205,179,54,51,677,288,0],[261,179,35,51,543,478,0],[298,179,53,51,561,370,0],[353,179,49,51,443,252,0],[404,179,32,51,578,470,0],[438,179,50,50,593,168,0],[490,179,55,50,657,319,0],[547,179,57,50,342,301,0],[606,179,48,50,514,123,0],[656,179,43,50,562,263,0],[701,179,42,50,339,404,0],[745,179,52,49,351,175,0],[799,179,44,49,623,363,0],[845,179,47,49,397,258,0],[894,179,47,49,628,145,0],[943,179,50,49,347,261,0],[0,234,44,49,692,217,0],[46,234,47,49,665,176,0],[95,234,47,49,259,409,0],[144,234,41,49,350,215,0],[187,234,44,49,541,238,0],[233,234,51,49,242,326,0],[286,234,45,48,504,481,0],[333,234,49,48,321,442,0],[384,234,39,48,249,221,0],[425,234,44,48,364,154,0],[471,234,43,48,698,389,0],[516,234,43,48,679,238,0],[561,234,39,47,303,399,0],[602,234,40,47,690,367,0],[644,234,43,47,614,392,0],[689,234,34,47,555,320,0],[725,234,45,46,633,300,0],[772,234,41,46,459,286,0],[815,234,38,46,346,132,0],[855,234,42,46,667,262,0],[899,234,55,46,588,348,0],[956,234,53,46,431,432,0],[0,285,32,46,322,178,0],[34,285,32,45,632,447,0],[68,285,33,45,419,117,0],[103,285,44,45,341,391,0],[149,285,45,45,654,405,0],[196,285,40,45,499,285,0],[238,285,48,45,302,470,0],[288,285,47,45,471,463,0],[337,285,47,45,278,436,0],[386,285,53,44,390,336,0],[441,285,50,44,506,193,0],[493,285,42,44,364,350,0],[537,285,30,44,665,367,0],[569,285,36,44,372,379,0],[607,285,49,44,386,443,0],[658,285,34,44,272,176,0],[694,285,46,44,520,372,0],[742,285,41,44,657,189,0],[785,285,46,43,551,487,0],[833,285,35,43,429,276,0],[870,285,31,43,718,335,0],[903,285,46,42,614,329,0],[951,285,47,42,515,266,0],[0,333,47,42,283,232,0],[49,333,54,42,381,408,0],[105,333,44,41,280,378,0],[151,333,49,41,476,248,0],[202,333,39,41,523,416,0],[243,333,39,41,518,456,0],[284,333,45,40,544,341,0],[331,333,42,40,442,367,0],[375,333,43,40,394,298,0],[420,333,63,40,342,482,0],[485,333,51,40,667,425,0],[538,333,40,40,607,480,0],[580,333,40,39,435,396,0],[622,333,28,39,499,368,0],[652,333,49,39,408,455,0],[703,333,31,38,500,326,0],[736,333,35,38,593,155,0],[773,333,43,38,607,225,0],[818,333,31,38,516,337,0],[851,333,30,37,720,311,0],[883,333,47,37,589,294,0],[932,333,41,37,513,233,0],[0,377,51,37,606,191,0],[53,377,22,36,472,409,0],[77,377,51,36,404,480,0],[130,377,51,36,484,443,0],[183,377,34,36,467,221,0],[219,377,27,36,268,373,0],[248,377,35,36,645,468,0],[285,377,42,36,532,400,0],[329,377,35,36,456,332,0],[366,377,42,35,650,226,0],[410,377,37,35,407,162,0],[449,377,32,35,633,204,0],[483,377,45,35,482,427,0],[530,377,47,35,538,294,0],[579,377,36,35,664,449,0],[617,377,47,34,271,217,0],[666,377,42,34,598,251,0],[710,377,35,34,575,437,0],[747,377,43,34,309,145,0],[792,377,44,34,542,444,0],[838,377,36,34,607,129,0],[876,377,39,33,472,193,0],[917,377,26,33,561,420,0],[945,377,23,33,498,216,0],[970,377,22,33,488,326,0],[0,416,37,32,384,137,0],[39,416,47,32,565,125,0],[88,416,44,31,377,122,0],[134,416,32,31,637,270,0],[168,416,34,31,528,314,0],[204,416,34,29,493,405,0],[240,416,42,29,603,283,0],[284,416,25,29,579,414,0],[311,416,51,28,609,435,0],[364,416,35,28,601,455,0],[401,416,40,27,639,248,0],[443,416,37,27,406,144,0],[482,416,52,25,470,506,0],[536,416,30,22,487,356,0],[568,416,35,22,462,363,0],[605,416,22,22,483,378,0],[629,416,59,20,404,509,0],[690,416,36,17,475,399,0]]};
+var MO_SRC = './assets/529646bc85ba35878f0dc16f0c0c51a1.png';
+var PK_BB = { x0: 239, y0: 27, w: 511, h: 504 };
+var PK_GRID = [[170,0,170,90,1],[114,88,30,36,0],[144,88,44,36,0],[188,88,37,36,0],[225,88,50,36,0],[275,88,31,36,0],[306,88,35,36,0],[341,88,33,36,0],[374,88,41,36,0],[45,124,37,45,0],[82,124,30,45,0],[112,124,36,45,0],[148,124,43,45,0],[191,124,38,45,0],[229,124,35,45,0],[264,124,42,45,0],[306,124,35,45,0],[341,124,32,45,0],[373,124,34,45,0],[407,124,49,45,0],[26,169,30,32,0],[56,169,36,32,0],[92,169,36,32,0],[128,169,35,32,0],[163,169,35,32,0],[198,169,39,32,0],[237,169,40,32,0],[277,169,36,32,0],[313,169,47,32,0],[360,169,50,32,0],[410,169,36,32,0],[446,169,35,32,0],[0,201,21,40,0],[21,201,41,40,0],[62,201,43,40,0],[105,201,35,40,0],[140,201,34,40,0],[174,201,38,40,0],[212,201,32,40,0],[244,201,40,40,0],[284,201,39,40,0],[323,201,49,40,0],[372,201,48,40,0],[420,201,30,40,0],[450,201,49,40,0],[0,241,32,30,0],[32,241,39,30,0],[71,241,45,30,0],[116,241,40,30,0],[156,241,35,30,0],[191,241,45,30,0],[236,241,45,30,0],[281,241,35,30,0],[316,241,31,30,0],[347,241,38,30,0],[385,241,30,30,0],[415,241,41,30,0],[456,241,42,30,0],[498,241,13,30,0],[0,271,18,45,0],[18,271,41,45,0],[59,271,42,45,0],[101,271,48,45,0],[149,271,30,45,0],[179,271,44,45,0],[223,271,31,45,0],[254,271,35,45,0],[289,271,49,45,0],[338,271,36,45,0],[374,271,33,45,0],[407,271,37,45,0],[444,271,44,45,0],[488,271,23,45,0],[0,316,35,44,0],[35,316,38,44,0],[73,316,44,44,0],[117,316,33,44,0],[150,316,48,44,0],[198,316,41,44,0],[239,316,39,44,0],[278,316,31,44,0],[309,316,43,44,0],[352,316,32,44,0],[384,316,36,44,0],[420,316,40,44,0],[460,316,46,44,0],[506,316,5,44,0],[5,360,40,39,0],[45,360,38,39,0],[83,360,47,39,0],[130,360,32,39,0],[162,360,39,39,0],[201,360,40,39,0],[241,360,39,39,0],[280,360,35,39,0],[315,360,32,39,0],[347,360,50,39,0],[397,360,34,39,0],[431,360,39,39,0],[470,360,41,39,0],[8,399,32,33,0],[40,399,49,33,0],[89,399,47,33,0],[136,399,42,33,0],[178,399,31,33,0],[209,399,37,33,0],[246,399,49,33,0],[295,399,41,33,0],[336,399,38,33,0],[374,399,44,33,0],[418,399,50,33,0],[468,399,43,33,0],[49,432,31,32,0],[80,432,45,32,0],[125,432,40,32,0],[165,432,36,32,0],[201,432,34,32,0],[235,432,48,32,0],[283,432,34,32,0],[317,432,50,32,0],[367,432,43,32,0],[410,432,33,32,0],[443,432,35,32,0],[70,464,39,39,0],[109,464,34,39,0],[143,464,44,39,0],[187,464,49,39,0],[236,464,35,39,0],[271,464,46,39,0],[317,464,44,39,0],[361,464,45,39,0],[406,464,40,39,0]];
+var PK_TC = 0.05, PK_TB = 0.75, PK_FALL = 1.9;
+function pkEase(k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
+function moRng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+class Component extends DCLogic {
+  initFx() {
+    var self = this;
+    try {
+      this.fxCv = document.querySelector('.fx');
+      this.moImg = document.querySelector('.pk-atlas');
+      this.onResize = function () { self.sizeFx(); };
+      window.addEventListener('resize', this.onResize);
+      this.sizeFx();
+    } catch (e) {}
+  }
+  sizeFx() {
+    var cv = this.fxCv;
+    if (!cv) return;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    this.vw = window.innerWidth; this.vh = window.innerHeight;
+    cv.width = Math.round(this.vw * dpr); cv.height = Math.round(this.vh * dpr);
+    this.fctx = cv.getContext('2d');
+    this.fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  scroller() {
+    var se = document.scrollingElement || document.documentElement;
+    if (se.scrollHeight > se.clientHeight + 4) return se;
+    var el = document.querySelector('.pp');
+    while (el && el !== document.body) {
+      var cs = getComputedStyle(el);
+      if (/(auto|scroll)/.test(cs.overflowY) && el.scrollHeight > el.clientHeight + 4) return el;
+      el = el.parentElement;
+    }
+    return se;
+  }
+  goMail() {
+    try {
+      var tgt = document.querySelector('.ct-in');
+      if (tgt) tgt.scrollIntoView({ block: 'start' });
+      var m = document.querySelector('.mail');
+      if (m) m.focus({ preventScroll: true });
+    } catch (e) {}
+  }
+  breakPumpkin() {
+    try { this.breakPumpkinInner(); } catch (e) { this.fxRun = false; this.goMail(); }
+  }
+  breakPumpkinInner() {
+    var self = this;
+    if (this.fxRun) return;
+    var btn = document.querySelector('.pk'), tgt = document.querySelector('.ct-in');
+    if (!btn || !tgt) { this.goMail(); return; }
+    if (!this.fctx) this.initFx();
+    if (!this.fctx) { this.goMail(); return; }
+    var atlas = document.querySelector('.pk-atlas'), whole = btn.querySelector('img');
+    var useAtlas = !!(atlas && atlas.complete && atlas.naturalWidth);
+    var srcImg = useAtlas ? atlas : whole;
+    if (!srcImg || !srcImg.complete || !srcImg.naturalWidth) { this.goMail(); return; }
+    this.fxImg = srcImg;
+    var wsc = useAtlas ? 1 : srcImg.naturalWidth / PK_BB.w;
+    var parts = useAtlas
+      ? MO.p.map(function (q) { return { s: [q[0], q[1], q[2], q[3]], px: q[4] - PK_BB.x0, py: q[5] - PK_BB.y0, w: q[2], h: q[3], stem: q[6] === 1 }; })
+      : PK_GRID.map(function (c) { return { s: [c[0] * wsc, c[1] * wsc, c[2] * wsc, c[3] * wsc], px: c[0], py: c[1], w: c[2], h: c[3], stem: c[4] === 1 }; });
+    this.sizeFx();
+    this.sc = this.scroller();
+    var scTop = this.sc === (document.scrollingElement || document.documentElement) ? 0 : this.sc.getBoundingClientRect().top;
+    this.scTop = scTop;
+    var r = btn.getBoundingClientRect(), sy = this.sc.scrollTop || 0;
+    var s = r.width / PK_BB.w;
+    var ox = r.left, oy = r.top - scTop + sy;
+    var floor = tgt.getBoundingClientRect().top - scTop + sy - 8;
+    var viewH = this.sc.clientHeight || this.vh;
+    this.scroll0 = sy;
+    this.scroll1 = Math.max(0, Math.min(this.sc.scrollHeight - viewH, floor - viewH * 0.42));
+    var D = Math.max(200, floor - (oy + r.height / 2));
+    this.g = Math.max(900, 2 * (D + 160) / (PK_FALL * PK_FALL));
+    var rr = moRng(Math.floor(Math.random() * 100000));
+    var cx = ox + r.width / 2, cy = oy + r.height * 0.62;
+    var vw = this.vw;
+    this.fp = parts.map(function (o) {
+      var w = o.w * s, h = o.h * s, q = o.s;
+      var hx = ox + o.px * s + w / 2, hy = oy + o.py * s + h / 2;
+      var dx = hx - cx, dy = hy - cy, d = Math.hypot(dx, dy) || 1, stem = o.stem;
+      var sp = 140 + rr() * 280;
+      return { q: q, w: w, h: h, hx: hx, hy: hy, x: hx, y: hy, ux: dx / d, uy: dy / d, stem: stem, scl: 1, rot: 0, grow: 1,
+        vx: stem ? rr() * 40 - 20 : dx / d * sp * (vw < 700 ? 0.45 : 0.75),
+        vy: stem ? -280 : dy / d * sp * 0.5 - 120 - rr() * 220,
+        w0: (rr() - 0.5) * (stem ? 3 : 12), ph: 0, ts: stem ? 2 : (3 + rr() * 9),
+        land: floor - rr() * 40, flat: stem ? 0.8 : 0.4 + rr() * 0.3, bounces: 0, rest: false,
+        crackK: 1 + 2 * Math.exp(-Math.pow((hx - cx) / (r.width * 0.15), 2)),
+        delay: Math.min(0.3, Math.hypot(hx - cx, hy - oy) / (r.width * 2.5)) };
+    });
+    this.forder = this.fp.slice().sort(function (a, b) { return a.land - b.land; });
+    this.ft = 0; this.fxRun = true; this.fadeAsked = false;
+    this.setState({ pkGone: true, fxFade: false });
+    var last = null;
+    var schedule = function () {
+      var done = false;
+      var go = function () {
+        if (done) return; done = true;
+        if (!self.fxRun) return;
+        var now = performance.now();
+        if (last === null) last = now;
+        var dt = Math.min(0.033, (now - last) / 1000); last = now;
+        try { self.stepFx(dt); self.drawFx(); } catch (e) { self.fxRun = false; self.setState({ pkGone: false, fxFade: false }); self.goMail(); return; }
+        if (self.fxRun) schedule();
+      };
+      try { self.fxRaf = requestAnimationFrame(go); } catch (e) {}
+      setTimeout(go, 40);
+    };
+    schedule();
+  }
+  stepFx(dt) {
+    var self = this;
+    this.ft += dt;
+    var t = this.ft, g = this.g, vw = this.vw;
+    if (t >= PK_TB) {
+      var k = Math.min(1, (t - PK_TB) / PK_FALL);
+      try { this.sc.scrollTop = this.scroll0 + (this.scroll1 - this.scroll0) * pkEase(k); } catch (e) {}
+    }
+    this.fp.forEach(function (p) {
+      if (t < PK_TB) {
+        var c = Math.max(0, Math.min(1, (t - PK_TC - p.delay) / (PK_TB - PK_TC - 0.2)));
+        var off = c * c * 3 * p.crackK;
+        p.x = p.hx + p.ux * off; p.y = p.hy + p.uy * off;
+        p.rot = c * c * (p.w0 > 0 ? 0.05 : -0.05);
+        return;
+      }
+      p.grow = 1 + 1.3 * Math.min(1, (t - PK_TB) / 1.6);
+      if (!p.rest) {
+        p.vy += g * dt; p.x += p.vx * dt; p.y += p.vy * dt;
+        p.rot += p.w0 * dt; p.ph += p.ts * dt;
+        p.scl = 0.18 + 0.82 * Math.abs(Math.cos(p.ph));
+        var he = 0.5 * p.h * p.grow * p.scl;
+        if (p.y + he >= p.land && p.vy > 0) {
+          p.y = p.land - he; p.bounces++;
+          p.vy = -p.vy * 0.22; p.vx *= 0.5; p.w0 *= 0.4; p.ts *= 0.35;
+          if (p.bounces >= 2 || Math.abs(p.vy) < 90) { p.rest = true; p.vy = 0; }
+        }
+        if (p.x < 20) { p.x = 20; p.vx = Math.abs(p.vx) * 0.5; }
+        if (p.x > vw - 20) { p.x = vw - 20; p.vx = -Math.abs(p.vx) * 0.5; }
+      } else {
+        p.vx *= Math.exp(-7 * dt); p.x += p.vx * dt;
+        p.scl += (p.flat - p.scl) * Math.min(1, dt * 6);
+        p.y = p.land - 0.5 * p.h * p.grow * p.scl;
+      }
+    });
+    var endT = PK_TB + PK_FALL + 2.6;
+    if (t > endT && !this.fadeAsked) { this.fadeAsked = true; this.setState({ fxFade: true }); }
+    if (t > endT + 0.9) {
+      this.fxRun = false;
+      try { this.fctx.clearRect(0, 0, this.vw, this.vh); } catch (e) {}
+      this.setState({ pkGone: false, fxFade: false });
+      try { var m = document.querySelector('.mail'); if (m) m.focus({ preventScroll: true }); } catch (e) {}
+    }
+  }
+  drawFx() {
+    var ctx = this.fctx, img = this.fxImg;
+    if (!ctx || !img || !this.fp || !this.fxRun) return;
+    ctx.clearRect(0, 0, this.vw, this.vh);
+    var sy = this.sc ? this.sc.scrollTop : 0, top = this.scTop || 0;
+    var list = this.ft >= PK_TB ? this.forder : this.fp;
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i], q = p.q;
+      var yy = p.y - sy + top;
+      if (yy < -200 || yy > this.vh + 200) continue;
+      ctx.save();
+      ctx.translate(p.x, yy); ctx.rotate(p.rot); ctx.scale(p.grow, p.grow * p.scl);
+      ctx.drawImage(img, q[0], q[1], q[2], q[3], -p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    }
+  }
+  constructor(...a) {
+    super(...a);
+    this.state = { lang: (this.props && this.props.lang) || 'en', open: null, phase: 'idle', returning: null, seen: {} };
+    this.timers = [];
+  }
+  componentDidMount() {
+    var self = this;
+    this.onScroll = function () {
+      if (self.raf) return;
+      self.raf = requestAnimationFrame(function () {
+        self.raf = null;
+        try { var el = document.querySelector('.pp'); if (el) el.style.setProperty('--sy', String(window.scrollY || 0)); } catch (e) {}
+      });
+    };
+    try { window.addEventListener('scroll', this.onScroll, { passive: true }); } catch (e) {}
+    try {
+      this.io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var k = en.target.getAttribute('data-rv');
+          self.io.unobserve(en.target);
+          self.setState(function (s) { var n = Object.assign({}, s.seen); n[k] = true; return { seen: n }; });
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('[data-rv]').forEach(function (el) { self.io.observe(el); });
+    } catch (e) { this.setState({ seen: { lib: true, ct: true, xp: true } }); }
+    this.later(function () { self.setState({ seen: { lib: true, ct: true, xp: true } }); }, 4000);
+    this.initFx();
+  }
+  componentWillUnmount() {
+    this.timers.forEach(function (t) { clearTimeout(t); });
+    try { cancelAnimationFrame(this.fxRaf); window.removeEventListener('resize', this.onResize); } catch (e) {}
+    try { window.removeEventListener('scroll', this.onScroll); } catch (e) {}
+    try { if (this.io) this.io.disconnect(); } catch (e) {}
+  }
+  later(fn, ms) { this.timers.push(setTimeout(fn, ms)); }
+  rm() { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
+  focusSel(sel) { try { var el = document.querySelector(sel); if (el) el.focus({ preventScroll: true }); } catch (e) {} }
+  openBook(id) {
+    if (this.state.phase !== 'idle') return;
+    var self = this;
+    this.setState({ open: id, phase: 'tilt', returning: null });
+    this.later(function () {
+      self.setState({ phase: 'open' });
+      self.later(function () { self.focusSel('.pp-close'); }, 120);
+    }, this.rm() ? 10 : 700);
+  }
+  close() {
+    if (this.state.phase !== 'open') return;
+    var self = this, id = this.state.open;
+    this.setState({ phase: 'closing' });
+    this.later(function () {
+      self.setState({ phase: 'idle', open: null, returning: id });
+      self.focusSel('.b-' + id);
+      self.later(function () { self.setState({ returning: null }); }, 850);
+    }, this.rm() ? 10 : 600);
+  }
+  renderVals() {
+    var self = this, s = this.state, L = s.lang === 'ru' ? 'ru' : 'en', t = UI[L];
+    function T(o) { return (o && typeof o === 'object' && !Array.isArray(o)) ? o[L] : o; }
+    var bk = {};
+    var books = BOOKS.map(function (b) {
+      var c = 'bk2 b-' + b.id;
+      if (s.open === b.id && s.phase === 'tilt') c += ' is-tilt';
+      else if (s.open === b.id) c += ' is-out';
+      if (s.returning === b.id) c += ' is-return';
+      var o = { id: b.id, roman: b.roman, title: T(b.title), type: T(b.type), spine: T(b.spine), cls: c,
+        label: t.open + T(b.title), open: function () { self.openBook(b.id); } };
+      bk[b.id] = o;
+      return o;
+    });
+    var a = null;
+    for (var i = 0; i < BOOKS.length; i++) if (BOOKS[i].id === s.open) a = BOOKS[i];
+    var active = { kicker: '', no: '', title: '', script: '', lead: '', hasPortrait: false, h1: '', h2: '', h3: '', h4: '', s1p: '', hasS1p: false, s1items: [], s2p: '', hasS2p: false, s2items: [], stats: [], note: '', hasNote: false, images: [], hasImages: false, galCls: 'gal', quotes: [] };
+    if (a) {
+      var items = function (x) { return (T(x) || []).map(function (v) { return { t: v }; }); };
+      active = {
+        kicker: T(a.kicker), no: a.no, title: T(a.title), script: T(a.script), lead: T(a.lead), hasPortrait: !!a.portrait,
+        h1: T(a.h1) || t.task, h2: T(a.h2) || t.did, h3: T(a.h3) || t.res, h4: T(a.h4) || t.gal,
+        s1p: T(a.s1p) || '', hasS1p: !!a.s1p, s1items: items(a.s1items),
+        s2p: T(a.s2p) || '', hasS2p: !!a.s2p, s2items: items(a.s2items),
+        stats: (a.stats || []).map(function (x) { return { n: x.n, l: T(x.l) }; }),
+        note: T(a.note) || '', hasNote: !!a.note,
+        video: a.video || '', hasVideo: !!a.video, videoCap: T(a.videoCap) || '',
+        images: (a.images || []).map(function (m, k) { return { src: m.src || '', has: !!m.src, tbd: !m.src, cap: T(m.cap) + (m.src ? '' : ' — TBD'), fig: t.fig + ' ' + (k + 1) }; }),
+        hasImages: !!(a.images && a.images.length), galCls: 'gal' + (a.wide ? ' wide' : ''),
+        quotes: (a.quotes || []).map(function (q) { return { q: T(q.q), by: T(q.by) }; })
+      };
+    }
+    return {
+      lang: L, t: t, books: books, bk: bk, active: active,
+      enOn: L === 'en' ? 'true' : 'false', ruOn: L === 'ru' ? 'true' : 'false',
+      setEn: function () { self.setState({ lang: 'en' }); },
+      setRu: function () { self.setState({ lang: 'ru' }); },
+      openAbout: function () { self.openBook('about'); },
+      libCls: 'lib rv' + (s.seen.lib ? ' in' : ''),
+      ctCls: 'rv' + (s.seen.ct ? ' in' : ''),
+      xpCls: 'xp rv' + (s.seen.xp ? ' in' : ''),
+      openExp: function () { self.openBook('workexp'); },
+      pkCls: 'pk' + (s.pkGone ? ' is-gone' : ''),
+      fxCls: 'fx' + (s.fxFade ? ' is-fade' : ''),
+      breakPk: function () { self.breakPumpkin(); },
+      showOv: s.phase === 'open' || s.phase === 'closing',
+      ovCls: 'ov' + (s.phase === 'closing' ? ' is-closing' : ''),
+      close: function () { self.close(); },
+      stop: function (e) { e.stopPropagation(); },
+      onKey: function (e) { if (e.key === 'Escape') { e.stopPropagation(); self.close(); } }
+    };
+  }
+}
+</script>
+</body>
+</html>
